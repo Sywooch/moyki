@@ -6,5 +6,6 @@
 
     RewriteRule . index.php
     AddHandler fcgid-script .php
+    ---
 </IfModule>
 #hide index.php from url
