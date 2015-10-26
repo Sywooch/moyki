@@ -2,6 +2,8 @@
 
 namespace app\controllers;
 
+use app\models\Gender;
+use app\models\GenderForm;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -95,8 +97,23 @@ class SiteController extends Controller
         return $this->render('about');
     }
 
-    public function actionT()
+    public function actionGender()
     {
-        return $this->render('oop');
+        $gender = new GenderForm();
+        if ($gender->load(Yii::$app->request->post()) && $gender->validate()) {
+
+            $model = new Gender();
+            $model->email = $gender->email;
+            $model->password = $gender->password;
+            $model->gender = $gender->gender;
+            $model->date = $gender->date;
+            $model->save();
+            return $this->render('gender', ['model' => $gender]);
+        }
+        return $this->render('gender_1', ['model' => $gender]);
     }
+
+
 }
+
+
