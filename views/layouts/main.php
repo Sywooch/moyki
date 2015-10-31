@@ -8,6 +8,8 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
+use yii\widgets\Menu;
+use yii\bootstrap\Dropdown;
 
 AppAsset::register($this);
 ?>
@@ -15,6 +17,7 @@ AppAsset::register($this);
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
 <head>
+
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
@@ -24,48 +27,64 @@ AppAsset::register($this);
 <body>
 <?php $this->beginBody() ?>
 
-<div class="wrap">
-    <?php
-    NavBar::begin([
-        'brandLabel' => 'My Company',
-        'brandUrl' => Yii::$app->homeUrl,
-        'options' => [
-            'class' => 'navbar-inverse navbar-fixed-top',
-        ],
-    ]);
-    echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-right'],
-        'items' => [
-            ['label' => 'Home', 'url' => ['/site/index']],
-            ['label' => 'About', 'url' => ['/site/about']],
-            ['label' => 'Contact', 'url' => ['/site/contact']],
-            Yii::$app->user->isGuest ?
-                ['label' => 'Login', 'url' => ['/site/login']] :
-                [
-                    'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
-                    'url' => ['/site/logout'],
-                    'linkOptions' => ['data-method' => 'post']
-                ],
-        ],
-    ]);
-    NavBar::end();
-    ?>
+<header>
+    <section class="header">
+        <div class="custom-container">
+            <div class="left">
+                <a href="/">
+                    <?= Html::img("/images/static/wash-big-logo.png", ['class' => 'main-logo']);?>
+                </a>
+            </div>
+            <div class="right">
+                <div class="btn-group buttons" role="group" aria-label="...">
+                    <div class="btn-group" role="group">
+                    <div class="dropdown">
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle">Киев<span class="glyphicon glyphicon-menu-down city-choose"></span></a>
+                        <?php
+                        echo Dropdown::widget([
+                            'items' => [
+                                ['label' => 'Киев', 'url' => '#'],
+                                ['label' => 'Днепропетровск', 'url' => '#'],
+                                ['label' => 'Одесса', 'url' => '#'],
+                            ],
+                        ]);
+                        ?>
+                    </div>
+                    </div>
+                    <?php if(Yii::$app->user->isGuest):?>
+                        <a href="#" class="header" data-toggle="modal" data-target="#login"><?=Yii::t('app', 'Login');?></a>
+                        <a href="#" class="header" data-toggle="modal" data-target="#sign-up"><?=Yii::t('app', 'Sign Up');?></a>
+                    <?php else:?>
+                        <a href="#" class="header login"><?=Yii::t('app', 'Welcome');?>, <?=Yii::$app->user->identity->phone;?></a>
+                        <a href="<?=\yii\helpers\Url::to(['site/logout']);?>" data-method="post" class="header"><?=Yii::t('app', 'Log out');?></a>
+                    <?php endif;?>
+                </div>
+            </div>
+        </div>
+    </section>
+</header>
 
-    <div class="container">
-        <?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) ?>
-        <?= $content ?>
+<div class="wrap">
+    <div class="custom-container">
+        <div class="row">
+            <?= $content ?>
+        </div>
     </div>
+    <section class="bottom-bg"></section>
 </div>
 
 <footer class="footer">
-    <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
-
-        <p class="pull-right"><?= Yii::powered() ?></p>
+    <div class="custom-container">
+        <div class="row">
+            <span class="copyright">&copy; <?= date('Y') ?> "<?=Yii::t('app', 'Wash online');?>" </span>
+        </div>
     </div>
 </footer>
+
+<?php if(Yii::$app->user->isGuest):?>
+    <?= \app\components\PopupWidget::widget(['popup_name' => 'login']);?>
+    <?= \app\components\PopupWidget::widget(['popup_name' => 'sign-up']);?>
+<?php endif;?>
 
 <?php $this->endBody() ?>
 </body>

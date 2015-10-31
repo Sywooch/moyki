@@ -1,0 +1,159 @@
+//add google font
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=latin,cyrillic); //open sans
+@import url(https://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700&subset=latin,cyrillic); //pt sans caption
+
+@import "variables";
+@import "admin";
+@import "steps";
+@import "popup";
+@import "form";
+
+body{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  .custom-container{
+    width: 980px;
+    margin: 0px auto;
+    .row{
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+  }
+  header{
+    section{
+      height: 90px;
+      line-height: 90px;
+      @include linear-gradient(bottom, top, $header-top, $header-bottom);
+      .custom-container{
+        height: 100%;
+        .left{
+          width: 50%;
+          float: left;
+          .main-logo{
+            position: relative;
+            left: 45px;
+          }
+        }
+        .right{
+          width: 50%;
+          float: right;
+          .buttons {
+            float: right;
+            right: 45px;
+            .header{
+              font-family: 'PT Sans Caption', sans-serif;
+              background: transparent;
+              color: $dark;
+              font-weight: 600;
+              border-bottom: 1px solid white;
+              outline: none;
+              letter-spacing: 1px;
+              text-transform: uppercase;
+              margin-left: 22px;
+              font-size: 0.95em;
+              &:active, &:focus{
+                outline: none;
+                text-decoration: none;
+              }
+              &:hover{
+                text-decoration: none;
+                color: white;
+                border-bottom: none;
+              }
+              &.login{
+                border-bottom: none;
+                cursor: default;
+                &:hover{
+                  color: $dark;
+                }
+              }
+            }
+            .dropdown {
+              width: 170px;
+              height: 40px;
+              display: inline-block;
+              border: 2px solid rgba(255, 255, 255, 0.56);
+              border-radius: $border-radius;
+              margin-right: 5px;
+              letter-spacing: 1px;
+              .city-choose{
+                left: 61%;
+              }
+              a{
+                display: block;
+                height: 38px;
+                line-height: 38px;
+                padding: 0px 15px;
+                color: white;
+                text-transform: uppercase;
+                font-weight: 600;
+                text-decoration: none;
+                outline: none;
+              }
+              .dropdown-menu {
+                margin-top: 18px;
+                border-radius: $border-radius;
+                outline: none;
+                padding: 0px;
+                &:after {
+                  bottom: 100%;
+                  left: 65%;
+                  border: solid transparent;
+                  content: " ";
+                  height: 0;
+                  width: 0;
+                  position: absolute;
+                  pointer-events: none;
+                  border-color: rgba(255, 255, 255, 0);
+                  border-bottom-color: #ffffff;
+                  border-width: 12px;
+                  margin-left: -10px;
+                }
+                li{
+                  a{
+                    text-transform: capitalize;
+                    font-weight: 400;
+                    color: #000000;
+                    &:hover{
+                      background: $header-dropdown;
+                      color: white;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .wrap{
+    @include linear-gradient(bottom, top, $header-bottom, $wrap-bottom);
+    .bottom-bg{
+      background-image: url("/images/static/bottom-bg.png");
+      background-size: cover;
+      height: 270px;
+    }
+    &:before{
+      position: absolute;
+      content: '';
+      background-image: url("/images/static/header-bg.png");
+      background-size: cover;
+      height: 280px;
+      width: 100%;
+    }
+  }
+  footer{
+    background: $footer-bg;
+    margin-bottom: -20px;
+    height: 120px;
+    .custom-container{
+      line-height: 120px;
+      height: 100%;
+      .copyright{
+        font-weight: 600;
+        color: $footer-color;
+      }
+    }
+  }
+}

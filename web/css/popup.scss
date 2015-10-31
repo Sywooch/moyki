@@ -1,0 +1,37 @@
+.modal-dialog{
+  width: 720px;
+  background: white;
+  padding: 75px 120px 65px 120px;
+  position: relative;
+  top: 70px;
+  .modal-header{
+    font-family: 'PT Sans Caption', sans-serif;
+    padding: 10px 0px;
+    a {
+      text-decoration: none;
+      outline: none;
+    }
+    .first{
+      font-size: 1.750em;
+      color: $blue-dark;
+      margin-right: 20px;
+    }
+    .second{
+      color: $link;
+      border-bottom: 1px dashed $link;
+      font-weight: 600;
+      position: relative;
+      bottom: 2px;
+      &:hover{
+        color: $blue-dark;
+        border-bottom: none;
+      }
+    }
+  }
+  .modal-content{
+    box-shadow: none;
+    border: 2px solid $blue-border;
+    border-radius: $border-radius;
+    padding: 35px 45px;
+  }
+}

@@ -1,0 +1,30 @@
+//colors
+$background: #f0f5f9;
+$header-top: #7fb9e1;
+$header-bottom: #90c1e6;
+$wrap-bottom: #e7eff8;
+$header-dropdown: #78becb;
+$dark: #4a5b6c;
+$footer-bg: #e8f0f8;
+$footer-color: #95a8bd;
+$blue: #3a86b2;
+$blue-dark: #234156;
+$link: #23a0e6;
+$success: #009b00;
+
+//borders
+$blue-border: #b9d2e7;
+$border-radius: 5px;
+
+//buttons
+$submit: #66bacc;
+$submit-border: #499ca3;
+$submit-hover: #4fb4b9;
+$submit-border-hover: #379590;
+
+//gradients
+@mixin linear-gradient($direction, $direction-webkit, $color-one, $color-two) {
+  background: -webkit-linear-gradient($direction-webkit, $color-one , $color-two); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient($direction, $color-one , $color-two); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient($direction, $color-one , $color-two); /* For Firefox 3.6 to 15 */
+}

@@ -2,8 +2,11 @@
 
 namespace app\controllers;
 
+use app\models\RegistrationForm;
 use Yii;
 use yii\filters\AccessControl;
+use yii\helpers\Json;
+use yii\helpers\Url;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
@@ -56,19 +59,56 @@ class SiteController extends Controller
         return $this->render('index');
     }
 
+    public function actionComfyTime()
+    {
+        return $this->render('comfy-time');
+    }
+
     public function actionLogin()
     {
         if (!\Yii::$app->user->isGuest) {
             return $this->goHome();
         }
-
-        $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
+        if (Yii::$app->request->isAjax) {
+            $model = new LoginForm();
+            if ($model->load(Yii::$app->request->post()) && $model->login()) {
+                $response = [
+                    'status' => 'ok',
+                    'url' => Url::to(['site/index']),
+                    'message' => Yii::t('app', 'You have logged in successful')
+                ];
+                echo Json::encode($response);
+                Yii::$app->end();
+            }else{
+                $response = [
+                    'status' => 'error',
+                    'errors' => $model->getErrors()
+                ];
+                echo Json::encode($response);
+                Yii::$app->end();
+            }
         }
-        return $this->render('login', [
-            'model' => $model,
-        ]);
+    }
+
+    public function actionSignUp(){
+        if (Yii::$app->request->isAjax) {
+            $registrationForm = new RegistrationForm();
+            if ($user = $registrationForm->registration(Yii::$app->request->post())) {
+                $response = [
+                    'status' => 'ok',
+                    'url' => Url::to(['site/index']),
+                    'message' => Yii::t('app', 'You have signed up successful')
+                ];
+                echo Json::encode($response);
+                Yii::$app->end();
+            }
+            $response = [
+                'status' => 'error',
+                'errors' => $registrationForm->getErrors()
+            ];
+            echo Json::encode($response);
+            Yii::$app->end();
+        }
     }
 
     public function actionLogout()

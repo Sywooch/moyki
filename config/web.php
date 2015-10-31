@@ -3,9 +3,10 @@
 $params = require(__DIR__ . '/params.php');
 
 $config = [
-    'id' => 'basic',
+    'id' => 'moyki',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
+    'language' => 'ru',
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
@@ -44,6 +45,30 @@ $config = [
             'rules' => [
                 '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
                 '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
+            ],
+        ],
+        //translations
+        'i18n' => [
+            'translations' => [
+                'app*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    //'basePath' => '@app/messages',
+                    //'sourceLanguage' => 'en-US',
+                    'fileMap' => [
+                        'app' => 'app.php',
+                        'app/error' => 'error.php',
+                    ],
+                ],
+            ],
+        ],
+        //precompile sass
+        'assetManager' => [
+            'converter' => [
+                'class' => 'yii\web\AssetConverter',
+                'commands' => [
+                    'scss' => ['css', 'sass {from} {to} '],
+                    'sass' => ['css', 'sass {from} {to} '],
+                ],
             ],
         ],
         'db' => require(__DIR__ . '/db.php'),

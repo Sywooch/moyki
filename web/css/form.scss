@@ -1,0 +1,40 @@
+form{
+  .form-group{
+    label{
+      &.control-label {
+        text-align: left;
+        font-size: 0.750em;
+        font-weight: 400;
+      }
+    }
+    .help-block{
+      font-size: 0.750em;
+      font-weight: 400;
+    }
+    input{
+      height: 40px;
+      border-radius: 0px;
+    }
+    [type="submit"]{
+      height: 65px;
+      width: 100%;
+      background-color: $submit;
+      border: none;
+      border-radius: $border-radius;
+      border-bottom: 3px solid $submit-border;
+      outline: none;
+      font-size: 1.125em;
+      color: white;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      &:hover{
+        background-color: $submit-hover;
+        border-bottom-color: $submit-border-hover;
+      }
+    }
+    .success-msg{
+      color: $success;
+    }
+  }
+}
