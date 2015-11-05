@@ -127,7 +127,10 @@ class SiteController extends Controller
             return $this->refresh();
         }
         return $this->render('contact', [
-            'model' => $model, ]);
+            'model' => $model
+
+
+        ]);
     }
 
     public function actionAbout()
@@ -135,8 +138,5 @@ class SiteController extends Controller
         return $this->render('about');
     }
 
-    public function actionT()
-    {
-        return $this->render('oop');
-    }
+
 }
