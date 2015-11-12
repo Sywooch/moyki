@@ -51,13 +51,7 @@ AppAsset::register($this);
                         ?>
                     </div>
                     </div>
-                    <?php if(Yii::$app->user->isGuest):?>
-                        <a href="#" class="header" data-toggle="modal" data-target="#login"><?=Yii::t('app', 'Login');?></a>
-                        <a href="#" class="header" data-toggle="modal" data-target="#sign-up"><?=Yii::t('app', 'Sign Up');?></a>
-                    <?php else:?>
-                        <a href="#" class="header login"><?=Yii::t('app', 'Welcome');?>, <?=Yii::$app->user->identity->phone;?></a>
-                        <a href="<?=\yii\helpers\Url::to(['site/logout']);?>" data-method="post" class="header"><?=Yii::t('app', 'Log out');?></a>
-                    <?php endif;?>
+                    <?= \app\components\HeaderLayoutWidget::widget();?>
                 </div>
             </div>
         </div>

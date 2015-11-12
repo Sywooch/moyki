@@ -41,7 +41,7 @@ body{
           .buttons {
             float: right;
             right: 45px;
-            .header{
+            .header, .dropdown-login{
               font-family: 'PT Sans Caption', sans-serif;
               background: transparent;
               color: $dark;
@@ -120,6 +120,37 @@ body{
                       color: white;
                     }
                   }
+                }
+              }
+              &.login{
+                border: none;
+                .dropdown-menu{
+                  margin-top: 35px;
+                  &:after {
+                    left: 35%;
+                  }
+                }
+              }
+              .dropdown-login{
+                display: inline-block;
+                padding: 0px;
+                height: 30px;
+                border-bottom: 1px solid white;
+                color: $dark;
+                margin-left: 75px;
+                &:hover, &:focus{
+                  color: white;
+                  border-bottom: none;
+                }
+                &:before{
+                  position: absolute;
+                  content: '';
+                  width: 20px;
+                  height: 20px;
+                  background-image: url("/images/icons-moyki.png");
+                  background-position: center -5px;
+                  margin-top: 11px;
+                  margin-left: -24px;
                 }
               }
             }

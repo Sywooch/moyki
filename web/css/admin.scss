@@ -1,0 +1,54 @@
+body {
+  &.admin {
+    header {
+      section {
+        height: 50px;
+        .navbar-default {
+          background: #000000;
+          .main-logo {
+            position: relative;
+            bottom: 13px;
+          }
+          .navbar-nav {
+            li {
+              a {
+                text-transform: uppercase;
+              }
+              &.active{
+                a{
+                  background: $add-button;
+                  color: white;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .container{
+      &.admin{
+        .row {
+          margin-bottom: 20px;
+          .add-button {
+            padding: 12px 15px;
+            text-transform: uppercase;
+            background: $add-button;
+            color: white;
+            font-weight: 600;
+            border-radius: $border-radius;
+            font-size: 1.188em;
+            display: inline-block;
+            text-decoration: none;
+            border-bottom: 2px solid $add-button-hover;
+            &:hover {
+              background: $add-button-hover;
+            }
+            &:active{
+              box-shadow: inset 0px 2px $add-button-active;
+            }
+          }
+        }
+      }
+    }
+  }
+}

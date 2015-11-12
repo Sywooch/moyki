@@ -23,6 +23,7 @@ class RegistrationForm extends Model
             [['phone', 'password'], 'required'],
             ['phone', 'unique', 'targetClass' => '\app\models\User',
                 'message' => Yii::t('app','Phone has already been taken')],
+            [['phone'], 'integer'],
         ];
     }
 
