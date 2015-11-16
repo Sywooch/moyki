@@ -10,7 +10,7 @@ use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
 use yii\widgets\Menu;
 use yii\bootstrap\Dropdown;
-use Yii;
+
 
 AppAsset::register($this);
 ?>

@@ -3,7 +3,7 @@ namespace app\modules\admin\models;
 
 use Yii;
 use yii\db\ActiveRecord;
-use karpoff\icrop\CropImageUploadBehavior;
+//use karpoff\icrop\CropImageUploadBehavior;
 class Vehicle extends ActiveRecord{
 
     public function rules()
@@ -13,21 +13,21 @@ class Vehicle extends ActiveRecord{
         ];
     }
 
-    function behaviors()
-    {
-        return [
-            [
-                'class' => CropImageUploadBehavior::className(),
-                'attribute' => 'image',
-                'scenarios' => ['insert', 'update'],
-                'path' => '@webroot/upload/docs',
-                'url' => '@web/upload/docs',
-                'ratio' => 1,
-                'crop_field' => 'photo_crop',
-                'cropped_field' => 'photo_cropped',
-            ],
-        ];
-    }
+//    function behaviors()
+//    {
+//        return [
+//            [
+//                'class' => CropImageUploadBehavior::className(),
+//                'attribute' => 'image',
+//                'scenarios' => ['insert', 'update'],
+//                'path' => '@webroot/upload/docs',
+//                'url' => '@web/upload/docs',
+//                'ratio' => 1,
+//                'crop_field' => 'photo_crop',
+//                'cropped_field' => 'photo_cropped',
+//            ],
+//        ];
+//    }
 
 
 }
