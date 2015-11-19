@@ -25,7 +25,6 @@ body {
         }
       }
     }
-    .container{
       &.admin{
         .row {
           margin-bottom: 20px;
@@ -47,8 +46,30 @@ body {
               box-shadow: inset 0px 2px $add-button-active;
             }
           }
+          .one-instance{
+            padding-top: 80px;
+            .head{
+              background: $header-top;
+              padding: 0px;
+              div{
+                border: 1px solid $blue-border;
+              }
+            }
+            .each-row{
+              padding: 0px;
+              &:nth-of-type(2n){
+                background: $footer-color;
+              }
+              .item{
+                border: 1px solid $blue-border;
+                padding: 10px 20px;
+                &.action{
+                  padding-bottom: 16px;
+                }
+              }
+            }
+          }
         }
       }
-    }
   }
 }

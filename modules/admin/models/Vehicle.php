@@ -3,31 +3,22 @@ namespace app\modules\admin\models;
 
 use Yii;
 use yii\db\ActiveRecord;
-//use karpoff\icrop\CropImageUploadBehavior;
+
 class Vehicle extends ActiveRecord{
 
-    public function rules()
+    public function beforeSave($insert)
     {
-        return [
-            ['image' => 'jpeg, gif, png', 'on' => ['insert', 'update']],
-        ];
+        if (parent::beforeSave($insert)) {
+            if ($insert) {
+                $this->updated_at = time();
+            }
+            if($this->isNewRecord){
+                $this->created_at = time();
+                $this->updated_at = time();
+            }
+            return true;
+        }
+        return false;
     }
-
-//    function behaviors()
-//    {
-//        return [
-//            [
-//                'class' => CropImageUploadBehavior::className(),
-//                'attribute' => 'image',
-//                'scenarios' => ['insert', 'update'],
-//                'path' => '@webroot/upload/docs',
-//                'url' => '@web/upload/docs',
-//                'ratio' => 1,
-//                'crop_field' => 'photo_crop',
-//                'cropped_field' => 'photo_cropped',
-//            ],
-//        ];
-//    }
-
 
 }
