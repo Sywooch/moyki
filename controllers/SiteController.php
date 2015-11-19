@@ -138,5 +138,8 @@ class SiteController extends Controller
         return $this->render('about');
     }
 
+    public  function actionTolik(){
+        return $this->render('tolik', []);
+    }
 
 }

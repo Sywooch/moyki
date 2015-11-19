@@ -3,6 +3,7 @@ namespace app\modules\admin\models;
 use Yii;
 use yii\base\Model;
 use yii\validators;
+use yii\web\UploadedFile;
 
 class ServiceForm extends Model{
 
@@ -17,10 +18,11 @@ class ServiceForm extends Model{
         return
         [
             [['title', 'description', 'type'], 'required'],
-            [['image_1', 'image_2'], 'file', 'extensions' => 'gif, jpg, png'],
+            [['image_1', 'image_2'], 'file', 'skipOnEmpty' => false, 'extensions' => 'png, jpg, gif', 'maxFiles' => 2],
 
         ];
     }
+
 
     public function attributeLabels()
     {
@@ -28,9 +30,9 @@ class ServiceForm extends Model{
 
             'image_1' => 'Выберите изображение 1',
             'image_2' => 'Выберите изображение 2',
-            'title' => 'Введите информаци',
-            'description' => 'Введите текст',
-            'type' => 'Сообщение',
+            'title' => 'Услуга',
+            'description' => 'Что входилд в услугу',
+            'type' => 'Тип услуги',
 
         ];
     }

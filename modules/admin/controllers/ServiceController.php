@@ -2,15 +2,14 @@
 
 namespace app\modules\admin\controllers;
 
-use app\assets\AppAsset;
+
 use app\modules\admin\models\Service;
 use app\modules\admin\models\ServiceForm;
-use app\modules\admin\models\VehicleForm;
-use yii\base\Model;
 use yii\web\Controller;
 use Yii;
 use yii\validators;
-use yii\widgets\ActiveForm;
+
+use yii\web\UploadedFile;
 
 class ServiceController extends Controller
 {
@@ -20,9 +19,11 @@ class ServiceController extends Controller
         $model = new ServiceForm();
             if($model->load(Yii::$app->request->post()) && $model->validate()){
 
+                //create UploadedFile, get file from fileInput
                 $modeldb = new Service();
-//                $modeldb->image_1 = $model->image_1;
-//                $modeldb->image_2 = $model->image_2;
+
+                $modeldb->$image_1->saveAs('uploads/' . $this->image_1->baseName . '.' . $this->image_1->extension);
+                $modeldb->$image_2->saveAs('uploads/' . $this->image_2->baseName . '.' . $this->image_2->extension);
                 $modeldb->title = $model->title;
                 $modeldb->description = $model->description;
                 $modeldb->type = $model->type;
@@ -36,6 +37,7 @@ class ServiceController extends Controller
                      'service_model' => $model,
                 ]);
             }
+
     }
 
 }
