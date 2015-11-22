@@ -18,7 +18,8 @@ class ServiceForm extends Model{
         return
         [
             [['title', 'description', 'type'], 'required'],
-            [['image_1', 'image_2'], 'file', 'skipOnEmpty' => false, 'extensions' => 'png, jpg, gif', 'maxFiles' => 2],
+            [['image_1', 'image_2'], 'file'],
+
 
         ];
     }
@@ -36,5 +37,20 @@ class ServiceForm extends Model{
 
         ];
     }
+    public function uploadImage($service_model){
+        if ($this->validate()) {
+            $image_service_upload = 'images/uploads/vehicle/';
+            $image_1_path = $image_service_upload . $this->image_1->baseName .'-'.uniqid() . '.'.$this->image_1->extension;
+            $image_2_path = $image_service_upload . $this->image_2->baseName .'-'.uniqid() . '.'.$this->image_2->extension;
+            if($this->image_1->saveAs($image_1_path)){  $service_model->image_1 = '/'.$image_1_path;  }
+            if($this->image_2->saveAs($image_2_path)){  $service_model->image_2 = '/'.$image_2_path;  }
+
+            $service_model->save();
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 
 }

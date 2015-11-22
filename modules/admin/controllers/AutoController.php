@@ -13,10 +13,12 @@ class AutoController extends Controller
 {
     public function actionVehicleAndServices(){
         $vehicles = Vehicle::find()->indexBy('id')->all();
-        $services = Service::find()->indexBy('id')->all();
+        $services_main = Service::find()->where(['type' => 'main'])->all();
+        $services_add = Service::find()->where(['type' => 'add'])->all();
         return $this->render('vehicle_and_services',[
                 'vehicles' => $vehicles,
-                'services' => $services,
+                'services_main' => $services_main,
+                'services_add' => $services_add,
             ]);
     }
 

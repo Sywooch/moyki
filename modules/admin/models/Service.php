@@ -2,9 +2,23 @@
 namespace app\modules\admin\models;
 
 use Yii;
-use yii\data\ActiveDataProvider;
 use yii\db\ActiveRecord;
 
-class Service extends  ActiveRecord{
+class Service extends ActiveRecord{
 
+
+    public function beforeSave($insert)
+    {
+        if (parent::beforeSave($insert)) {
+            if ($insert) {
+                $this->updated_at = time();
+            }
+            if($this->isNewRecord){
+                $this->created_at = time();
+                $this->updated_at = time();
+            }
+            return true;
+        }
+        return false;
+    }
 }

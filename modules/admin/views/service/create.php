@@ -8,12 +8,19 @@ use yii\gii\generators\form;
 <?php
 $this->title = 'Добавление новой услуги';?>
 
-<p>Здесь будет форма для добавления новой ОСНОВНОЙ или ДОПОЛНИТЕЛЬНОЙ услуги</p>
+
 <?php $form = ActiveForm::begin([
     'action' => Url::to(['/admin/service/create']),
-    'options' => ['enctype' => 'multipart/form-data'],
-
-])?>
+    'options' => [
+        'enctype' => 'multipart/form-data',
+        'class' => 'form-horizontal'
+    ],
+    'fieldConfig' => [
+        'template' => "{label}\n<div class=\"col-xs-12 \">{input}</div>\n<div class=\"col-xs-12\">{error}</div>",
+        'labelOptions' => ['class' => 'col-xs-12 control-label label-get-tour'],
+        ],
+    ]);
+?>
 
 <?= $form->field($service_model, 'image_1')->fileInput();?>
 <?= $form->field($service_model, 'image_2')->fileInput();?>
@@ -23,7 +30,10 @@ $this->title = 'Добавление новой услуги';?>
     'main' => 'Основная',
     'add' => 'Дополнительная',
 ]); ?>
-<?= Html::submitButton('Save', ['class'  => 'btn btn-default col-xs-3' ]); ?>
+<?= Html::submitButton('Save', ['class'  => 'btn btn-success col-xs-4']); ?>
+<?=Html::a('Назад', ['/admin/auto/vehicle-and-services'],
+    ['class' => 'btn btn-default col-xs-4 pull-right']);?>
+
 
 
 <?php ActiveForm::end()?>
