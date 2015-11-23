@@ -40,7 +40,7 @@ AppAsset::register($this);
                 ['label' => Yii::t('app', 'History'), 'url' => ['#']],
                 ['label' => Yii::t('app', 'Owner history'), 'url' => ['#']],
                 ['label' => Yii::t('app', 'Statistics'), 'url' => ['#']],
-                ['label' => Yii::t('app', 'Wash Station'), 'url' => ['#']],
+                ['label' => Yii::t('app', 'Wash Station'), 'url' => ['/admin/carwash']],
                 ['label' => Yii::t('app', 'Services and Vehicles'), 'url' => ['/admin/auto/vehicle-and-services']],
                 ['label' =>   'Киев',
                     'items' => [

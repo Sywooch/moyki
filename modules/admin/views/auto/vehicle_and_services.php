@@ -4,6 +4,7 @@ use yii\helpers\Html;
 ?>
 
 <?= \app\components\AdminAlertWidget::widget(['type' => 'vehicle_created']);?>
+<?= \app\components\AdminAlertWidget::widget(['type' => 'service_updated']);?>
 
 <div class="admin">
     <div class="row">
@@ -36,14 +37,13 @@ use yii\helpers\Html;
                         <?= $vehicle->description;?>
                     </div>
                     <div class="col-xs-1 item action">
-                        <span class="col-xs-1 glyphicon glyphicon-pencil"></span>
-                        <span class="col-xs-1 glyphicon glyphicon-info-sign"></span>
+                        <?= Html::a(Html::tag('span', '', ['class' => 'glyphicon glyphicon-pencil']), \yii\helpers\Url::toRoute(['/admin/auto/edit_vehicle', 'id_vehicle' => $vehicle->id]), ['class' => 'col-xs-6']);?>
                         <span class="col-xs-1 glyphicon glyphicon-trash"></span>
                     </div>
                 </div>
             <?php endforeach;?>
 
-            <?= \yii\helpers\Html::a('Добавить Кузов Автомобиля',
+            <?= \yii\helpers\Html::a('Добавить',
                 ['/admin/auto/create-vehicle'],
                 ['class' => 'add-button']);?>
         </div>
@@ -60,12 +60,12 @@ use yii\helpers\Html;
             </div>
 
             <?php foreach($services_main as $service):?>
-                <div class="col-xs-12 each-row">
+                <div class="col-xs-12 each-row" data-service-id="<?=$service->id;?>">
                     <div class="col-xs-1 item">
-                        <?=Html::img($service->image_1, ['class' => 'img-reponsive']);?>
+                        <?=Html::img($service->image_1, ['class' => 'img-responsive']);?>
                     </div>
                     <div class="col-xs-1 item">
-                        <?=Html::img($service->image_2, ['class' => 'img-reponsive']);?>
+                        <?=Html::img($service->image_2, ['class' => 'img-responsive']);?>
                     </div>
                     <div class="col-xs-4 item">
                         <?= $service->title;?>
@@ -74,16 +74,14 @@ use yii\helpers\Html;
                         <?= $service->description;?>
                     </div>
                     <div class="col-xs-1 item action">
-                        <span class="col-xs-1 glyphicon glyphicon-pencil"></span>
-                        <span class="col-xs-1 glyphicon glyphicon-info-sign"></span>
-                        <span class="col-xs-1 glyphicon glyphicon-trash"></span>
+                        <?= Html::a(Html::tag('span', '', ['class' => 'glyphicon glyphicon-pencil']), \yii\helpers\Url::toRoute(['/admin/service/edit', 'id_service' => $service->id]), ['class' => 'col-xs-6 edit']);?>
+                        <?= Html::a(Html::tag('span', '', ['class' => 'glyphicon glyphicon-trash']), \yii\helpers\Url::toRoute(['/admin/service/delete', 'id_service' => $service->id]), ['class' => 'col-xs-6 delete']);?>
                     </div>
                 </div>
             <?php endforeach;?>
-            <?= \yii\helpers\Html::a('Добавить Услугу',
-                ['/admin/service/create'],
-                ['class' => 'add-button',
-                'type' =>'main']);?>
+            <?= \yii\helpers\Html::a('Добавить',
+                ['/admin/service/create', 'type' => 'main'],
+                ['class' => 'add-button']);?>
         </div>
     </div>
 
@@ -100,7 +98,7 @@ use yii\helpers\Html;
             </div>
 
             <?php foreach($services_add as $service):?>
-                <div class="col-xs-12 each-row">
+                <div class="col-xs-12 each-row" data-service-id="<?=$service->id;?>">
                     <div class="col-xs-1 item">
                         <?=Html::img($service->image_1, ['class' => 'img-reponsive']);?>
                     </div>
@@ -114,13 +112,11 @@ use yii\helpers\Html;
                         <?= $service->description;?>
                     </div>
                     <div class="col-xs-1 item action">
-                        <span class="col-xs-1 glyphicon glyphicon-pencil"></span>
-                        <span class="col-xs-1 glyphicon glyphicon-info-sign"></span>
-                        <span class="col-xs-1 glyphicon glyphicon-trash"></span>
+                        <?= Html::a(Html::tag('span', '', ['class' => 'glyphicon glyphicon-pencil']), \yii\helpers\Url::toRoute(['/admin/service/edit', 'id_service' => $service->id]), ['class' => 'col-xs-6 edit']);?>
+                        <?= Html::a(Html::tag('span', '', ['class' => 'glyphicon glyphicon-trash']), \yii\helpers\Url::toRoute(['/admin/service/delete', 'id_service' => $service->id]), ['class' => 'col-xs-6 delete']);?>
                     </div>
                 </div>
             <?php endforeach;?>
-            <?= \yii\helpers\Html::a('Добавить дополнительную услугу',
-                ['/admin/service/create'], ['class' => 'add-button',
-                'type' => 'add']);?>
+            <?= \yii\helpers\Html::a('Добавить',
+                ['/admin/service/create', 'type' => 'add'], ['class' => 'add-button']);?>
 </div>

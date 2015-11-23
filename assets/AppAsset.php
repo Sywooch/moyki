@@ -21,7 +21,8 @@ class AppAsset extends AssetBundle
         'css/main.scss',
     ];
     public $js = [
-        'js/main.js'
+        'js/main.js',
+        'js/admin.js',
     ];
     public $images = [
 

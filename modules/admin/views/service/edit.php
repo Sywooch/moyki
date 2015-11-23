@@ -6,17 +6,11 @@ use yii\gii\generators\form;
 ?>
 
 <?php
-$service_type = Yii::$app->request->get('type');
-if($service_type == 'main') {
-    $this->title = 'Добавление основной услуги';
-}else {
-    $this->title = 'Добавление дополнительной услуги';
-}
-$service_model->type = $service_type;
-?>
+$this->title = 'Редактирование новой услуги';?>
+
 
 <?php $form = ActiveForm::begin([
-    'action' => Url::to(['/admin/service/create']),
+    'action' => Url::to(['/admin/service/edit', 'id_service' => $serviceInstance->id]),
     'options' => [
         'enctype' => 'multipart/form-data',
         'class' => 'form-horizontal'
@@ -28,16 +22,15 @@ $service_model->type = $service_type;
     ]);
 ?>
 
-<?= $form->field($service_model, 'image_1')->fileInput();?>
-<?= $form->field($service_model, 'image_2')->fileInput();?>
-<?= $form->field($service_model, 'title')->textInput(); ?>
-<?= $form->field($service_model, 'description')->textarea(); ?>
-
-<?= $form->field($service_model, 'type')->dropDownList( [
+<?= $form->field($serviceForm, 'image_1')->fileInput();?>
+<?= $form->field($serviceForm, 'image_2')->fileInput();?>
+<?= $form->field($serviceForm, 'title')->textInput(); ?>
+<?= $form->field($serviceForm, 'description')->textarea(); ?>
+<?= $form->field($serviceForm, 'type')->dropDownList( [
     'main' => 'Основная',
     'add' => 'Дополнительная',
-]); ?>
-<?= Html::submitButton('Save', ['class'  => 'btn btn-success col-xs-4']); ?>
+], ['readonly' => true]); ?>
+<?= Html::submitButton('Редатировать', ['class'  => 'btn btn-success col-xs-4']); ?>
 <?=Html::a('Назад', ['/admin/auto/vehicle-and-services'],
     ['class' => 'btn btn-default col-xs-4 pull-right']);?>
 
