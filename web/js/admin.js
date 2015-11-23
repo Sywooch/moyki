@@ -3,7 +3,7 @@ $(function(){
         event.preventDefault();
        var url = $(this).attr('href');
 
-       var confirm_delete = confirm('Are you sure?');
+       var confirm_delete = confirm('Вы действительно хотите удалить элемент?');
 
        if(confirm_delete) {
 
@@ -11,7 +11,7 @@ $(function(){
                var data = $.parseJSON(answer);
                console.log(data);
                if (data.status == 'ok') {
-                   $('.each-row[data-service-id="' + data.service_id + '"]').fadeOut(2000);
+                   $('.each-row[data-element-id="' + data.service_id + '"]').fadeOut(2000);
                } else {
                    alert(data.msg);
                }

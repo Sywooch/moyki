@@ -20,7 +20,7 @@ use yii\helpers\Html;
             </div>
 
             <?php foreach($vehicles as $vehicle):?>
-                <div class="col-xs-12 each-row">
+                <div class="col-xs-12 each-row" data-element-id="<?=$vehicle->id;?>">
                     <div class="col-xs-1 item">
                         <?=Html::img($vehicle->image_1, ['class' => 'img-responsive']);?>
                     </div>
@@ -60,7 +60,7 @@ use yii\helpers\Html;
             </div>
 
             <?php foreach($services_main as $service):?>
-                <div class="col-xs-12 each-row" data-service-id="<?=$service->id;?>">
+                <div class="col-xs-12 each-row" data-element-id="<?=$service->id;?>">
                     <div class="col-xs-1 item">
                         <?=Html::img($service->image_1, ['class' => 'img-responsive']);?>
                     </div>
@@ -98,12 +98,12 @@ use yii\helpers\Html;
             </div>
 
             <?php foreach($services_add as $service):?>
-                <div class="col-xs-12 each-row" data-service-id="<?=$service->id;?>">
+                <div class="col-xs-12 each-row" data-element-id="<?=$service->id;?>">
                     <div class="col-xs-1 item">
-                        <?=Html::img($service->image_1, ['class' => 'img-reponsive']);?>
+                        <?=Html::img($service->image_1, ['class' => 'img-responsive']);?>
                     </div>
                     <div class="col-xs-1 item">
-                        <?=Html::img($service->image_2, ['class' => 'img-reponsive']);?>
+                        <?=Html::img($service->image_2, ['class' => 'img-responsive']);?>
                     </div>
                     <div class="col-xs-4 item">
                         <?= $service->title;?>
