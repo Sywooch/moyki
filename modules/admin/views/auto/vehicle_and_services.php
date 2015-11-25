@@ -45,14 +45,16 @@ use yii\helpers\Html;
 
                     </div>
                 </div>
-        </div>
+
             <?php endforeach;?>
 
             <?= \yii\helpers\Html::a('Добавить',
                 ['/admin/auto/create-vehicle'],
                 ['class' => 'add-button']);?>
-<hr width="90%">
+        </div>
     </div>
+    <hr width="90%">
+
     <div class="row">
         <div class="one-instance">
             <div class="h4" align="left">Типы услуг</div>
@@ -68,21 +70,20 @@ use yii\helpers\Html;
                         <?=Html::img($service->image_2, ['class' => 'img-responsive']);?>
                     </div>
                   </div>
-                        <div class="col-xs-9">
+                  <div class="col-xs-9">
                         <div class="col-xs-12 item">
-                            <div class="form">
-                                <div class="form-control">
-                                    <?= $service->title;?>
-                                </div>
+                          <div class="form">
+                            <div class="form-control">
+                                 <?= $service->title;?>
                             </div>
+                          </div>
                         </div>
                         <div class="col-xs-12 item">
                             <textarea class="form-control desc">
                                 <?= $service->description;?>
                             </textarea>
                         </div>
-                        </div>
-
+                  </div>
                     <div class="col-xs-1 item action">
                         <?= Html::a(Html::tag('span', '', ['class' => 'glyphicon glyphicon-pencil']), \yii\helpers\Url::toRoute(['/admin/service/edit', 'id_service' => $service->id]), ['class' => 'col-xs-12 edit']);?>
                         <?= Html::a(Html::tag('span', '', ['class' => 'glyphicon glyphicon-trash']), \yii\helpers\Url::toRoute(['/admin/service/delete', 'id_service' => $service->id]), ['class' => 'col-xs-12 delete']);?>
@@ -94,7 +95,7 @@ use yii\helpers\Html;
                 ['class' => 'add-button']);?>
         </div>
     </div>
-<hr width="90%">
+    <hr width="90%">
 
     <div class="row">
         <div class="one-instance">
@@ -132,13 +133,13 @@ use yii\helpers\Html;
                             <?= Html::a(Html::tag('span', '', ['class' => 'glyphicon glyphicon-trash']), \yii\helpers\Url::toRoute(['/admin/service/delete', 'id_service' => $service->id]), ['class' => 'col-xs-3 delete']);?>
                            </div>
                          </div>
+                </div>
             <?php endforeach;?>
-        </div>
             <?= \yii\helpers\Html::a('Добавить',
                 ['/admin/service/create', 'type' => 'add'], ['class' => 'add-button']);?>
 
+        </div>
     </div>
         <hr width="90%"><br><br>
-    </div>
+  </div>
 </div>
-
