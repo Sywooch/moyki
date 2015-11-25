@@ -119,11 +119,11 @@ use yii\helpers\Html;
                                     </div>
                                 </div>
                             </div>
-<!--                            <div class="col-xs-12 item">-->
-<!--                                <textarea class="form-control desc ">-->
-<!--                                --><?//= $service->description;?>
-<!--                                </textarea>-->
-<!--                            </div>-->
+                            <div class="col-xs-12 item">
+                                <textarea class="form-control desc ">
+                                <?= $service->description;?>
+                                </textarea>
+                            </div>
                         </div>
 
                         <div class="col-xs-1 action">
