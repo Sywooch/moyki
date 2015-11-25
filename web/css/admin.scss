@@ -1,5 +1,7 @@
 body {
-
+.wrap{
+  max-width: 100%;
+}
   &.admin {
     header {
       section {
@@ -11,12 +13,14 @@ body {
             bottom: 13px;
           }
           .navbar-nav {
+            align-self: 100%;
+            align-content: 100%;
             li {
               a {
                 text-transform: uppercase;
               }
-              &.active{
-                a{
+              &.active {
+                a {
                   background: $add-button;
                   color: white;
                 }
@@ -26,58 +30,114 @@ body {
         }
       }
     }
-      &.admin{
-        .row {
-          margin-bottom: 20px;
-          .add-button {
-            padding: 12px 15px;
-            text-transform: uppercase;
-            background: $add-button;
-            color: white;
-            font-weight: 600;
-            border-radius: $border-radius;
-            font-size: 1.188em;
-            display: inline-block;
-            text-decoration: none;
-            border-bottom: 2px solid $add-button-hover;
-            &:hover {
-              background: $add-button-hover;
+    &.admin {
+      .row {
+
+        .width{
+          max-width: 800px;
+        }
+        .container{
+          margin-top: 85px;
+          background-color: #ffffff;
+
+          width: 100%;
+        }
+        .add-button {
+          height: 45px;
+          padding: 12px 15px;
+          text-transform: uppercase;
+          background: $add-button;
+          color: white;
+          font-weight: 600;
+          border-radius: $border-radius;
+          font-size: 1.188em;
+          display: inline-block;
+          text-decoration: none;
+          border-bottom: 2px solid $add-button-hover;
+          &:hover {
+            background: $add-button-hover;
+          }
+          &:active {
+            box-shadow: inset 0px 2px $add-button-active;
+          }
+        }
+        .h4 {
+          font-weight: bold;
+        }
+        .form {
+          font-weight: bold;
+        }
+
+        .form-control {
+          vertical-align: middle;
+          text-align: left;
+          box-shadow: none;
+          padding: 6px 12px;
+          border-color: 1px solid #BEBABA;
+          border-width: 1px;
+          padding-left: 16px;
+          color: #424242;
+          background-image: none;
+
+          background: #ffffff;
+          border-radius: 4px;
+          margin-bottom: 2px;
+          .desc{
+            vertical-align: middle;
+            text-align: left;
+
+          }
+        }
+
+        .one-instance {
+          margin-top: 80px;
+          .body {
+            border: 4pt;
+            padding: 32px;
+            .images{
+              background-color: #f6f6f6;
+              display: block;
             }
-            &:active{
-              box-shadow: inset 0px 2px $add-button-active;
+
+          }
+          .head {
+            background: $header-top;
+            padding: 50px;
+//            background-color: #ffffff;
+            div {
+              border: 1px solid $blue-border;
             }
           }
 
-          .one-instance{
-            padding-top: 80px;
-            .head{
-              background: $header-top;
-              padding: 0px;
-              div{
-                border: 1px solid $blue-border;
-              }
-            }
-            .col-xs-4{
-              border: 3;
-            }
-            .each-row{
-              padding: 0px;
-              &:nth-of-type(2n){
-                background: $footer-color;
+          .glyphicon {
+            font-size: 1.4em;
 
-              }
-              .item{
-                border: 1px solid $blue-border;
-                padding: 10px 2px;
-                &.action{
-                  padding-bottom: 16px;
-                }
+          }
+
+
+          .each-row {
+//            margin-right: 1px;
+            padding: none;
+            background-position: bottom;
+//            background-color: #d3d3d3 ;
+            height: auto;
+            background-color: transparent;
+            &:nth-of-type(1n) {
+
+            }
+            .item {
+              border: 1px solid $blue-border;
+              padding: 13px 4px;
+              min-height: 8px;
+              &.action {
+                padding-bottom: 16px;
               }
             }
           }
         }
       }
 
-  }
+    }
 
+  }
 }

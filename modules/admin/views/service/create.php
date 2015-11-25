@@ -27,7 +27,7 @@ $service_model->type = $service_type;
         ],
     ]);
 ?>
-
+<div class="container">
 <?= $form->field($service_model, 'image_1')->fileInput();?>
 <?= $form->field($service_model, 'image_2')->fileInput();?>
 <?= $form->field($service_model, 'title')->textInput(); ?>
@@ -37,10 +37,10 @@ $service_model->type = $service_type;
     'main' => 'Основная',
     'add' => 'Дополнительная',
 ]); ?>
-<?= Html::submitButton('Save', ['class'  => 'btn btn-success col-xs-4']); ?>
+<?= Html::submitButton('Сохранить', ['class'  => 'btn btn-success col-xs-4']); ?>
 <?=Html::a('Назад', ['/admin/auto/vehicle-and-services'],
     ['class' => 'btn btn-default col-xs-4 pull-right']);?>
 
-
+</div>
 
 <?php ActiveForm::end()?>

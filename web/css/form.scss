@@ -16,6 +16,7 @@ form{
       border-radius: 0px;
     }
     [type="submit"]{
+      vertical-align: middle;
       height: 65px;
       width: 100%;
       background-color: $submit;

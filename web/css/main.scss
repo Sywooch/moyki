@@ -171,13 +171,13 @@ body{
       content: '';
       background-image: url("/images/static/header-bg.png");
       background-size: cover;
-      //height: 280px;
+//      height: 0px;
       width: 100%;
     }
   }
   footer{
     background: $footer-bg;
-    margin-bottom: -20px;
+    margin-bottom: -40px;
     height: 120px;
     .custom-container{
       line-height: 120px;

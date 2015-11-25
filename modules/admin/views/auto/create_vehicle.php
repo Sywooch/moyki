@@ -16,7 +16,7 @@ use yii\helpers\Html;
         'labelOptions' => ['class' => 'col-xs-12 control-label label-get-tour'],
     ],
 ]); ?>
-
+    <div class="container">
 <?= $form->field($model, 'image_1')->fileInput() ?>
 <?= $form->field($model, 'image_2')->fileInput() ?>
 <?= $form->field($model, 'image_3')->fileInput() ?>
@@ -25,5 +25,5 @@ use yii\helpers\Html;
 
 <?=Html::submitButton('Сохранить', ['class' => 'btn btn-success col-xs-4']);?>
 <?=Html::a('Назад', ['/admin/auto/vehicle-and-services'], ['class' => 'btn btn-default col-xs-4 pull-right']);?>
-
+    </div>
 <?php ActiveForm::end();?>

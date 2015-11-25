@@ -1,5 +1,5 @@
 $(function(){
-   $('.one-instance .delete').on('click', function(event){
+   $(' .delete').on('click', function(event){
         event.preventDefault();
        var url = $(this).attr('href');
 
@@ -11,7 +11,7 @@ $(function(){
                var data = $.parseJSON(answer);
                console.log(data);
                if (data.status == 'ok') {
-                   $('.each-row[data-element-id="' + data.service_id + '"]').fadeOut(2000);
+                   $('.body[data-element-id="' + data.service_id +'"]').fadeOut(2000);
                } else {
                    alert(data.msg);
                }
