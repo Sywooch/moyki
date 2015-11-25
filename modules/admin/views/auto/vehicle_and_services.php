@@ -14,18 +14,18 @@ use yii\helpers\Html;
 
             <?php foreach($vehicles as $vehicle):?>
                 <div class="col-xs-12 body" data-element-id="<?=$vehicle->id;?>">
-                  <div class="col-xs-6 images">
-                        <div class="col-xs-4  images">
+                  <div class="col-xs-4 images">
+                        <div class="col-xs-4 item">
                             <?=Html::img($vehicle->image_1, ['class' => 'img-responsive']);?>
                         </div>
-                        <div class="col-xs-4  images">
+                        <div class="col-xs-4  item">
                             <?=Html::img($vehicle->image_2, ['class' => 'img-responsive']);?>
                         </div>
-                        <div class="col-xs-4 images">
+                        <div class="col-xs-4 item">
                             <?=Html::img($vehicle->image_3, ['class' => 'img-responsive']);?>
                         </div>
                   </div>
-                    <div class="col-xs-5">
+                    <div class="col-xs-7">
                         <div class="col-xs-12 item">
                             <div class="form">
                                 <div class="form-control">
@@ -119,17 +119,17 @@ use yii\helpers\Html;
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xs-12 item">
-                                <textarea class="form-control desc ">
-                                <?= $service->description;?>
-                                </textarea>
-                            </div>
+<!--                            <div class="col-xs-12 item">-->
+<!--                                <textarea class="form-control desc ">-->
+<!--                                --><?//= $service->description;?>
+<!--                                </textarea>-->
+<!--                            </div>-->
                         </div>
 
                         <div class="col-xs-1 action">
                            <div class="icon">
-                            <?= Html::a(Html::tag('span', '', ['class' => 'glyphicon glyphicon-pencil']), \yii\helpers\Url::toRoute(['/admin/service/edit', 'id_service' => $service->id]), ['class' => 'col-xs-6 edit']);?>
-                            <?= Html::a(Html::tag('span', '', ['class' => 'glyphicon glyphicon-trash']), \yii\helpers\Url::toRoute(['/admin/service/delete', 'id_service' => $service->id]), ['class' => 'col-xs-6 delete']);?>
+                            <?= Html::a(Html::tag('span', '', ['class' => 'glyphicon glyphicon-pencil']), \yii\helpers\Url::toRoute(['/admin/service/edit', 'id_service' => $service->id]), ['class' => 'col-xs-3 edit']);?>
+                            <?= Html::a(Html::tag('span', '', ['class' => 'glyphicon glyphicon-trash']), \yii\helpers\Url::toRoute(['/admin/service/delete', 'id_service' => $service->id]), ['class' => 'col-xs-3 delete']);?>
                            </div>
                          </div>
             <?php endforeach;?>

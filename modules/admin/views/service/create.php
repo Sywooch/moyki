@@ -40,7 +40,7 @@ $service_model->type = $service_type;
 <?= Html::submitButton('Сохранить', ['class'  => 'btn btn-success col-xs-4']); ?>
 <?=Html::a('Назад', ['/admin/auto/vehicle-and-services'],
     ['class' => 'btn btn-default col-xs-4 pull-right']);?>
-
+<br><br><br>
 </div>
 
 <?php ActiveForm::end()?>

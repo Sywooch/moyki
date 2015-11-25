@@ -32,7 +32,6 @@ body {
     }
     &.admin {
       .row {
-
         .width{
           max-width: 800px;
         }
@@ -97,29 +96,30 @@ body {
             .images{
               background-color: #f6f6f6;
               display: block;
+              .col-xs-6{
+                padding: 0px;
+              }
+              .col-xs-4{
+                padding: 0px;
+              }
+              .col-xs-2{
+                padding: 0px;
+              }
             }
-
           }
           .head {
             background: $header-top;
             padding: 50px;
-//            background-color: #ffffff;
             div {
               border: 1px solid $blue-border;
             }
           }
-
           .glyphicon {
             font-size: 1.4em;
-
           }
-
-
           .each-row {
-//            margin-right: 1px;
             padding: none;
             background-position: bottom;
-//            background-color: #d3d3d3 ;
             height: auto;
             background-color: transparent;
             &:nth-of-type(1n) {
