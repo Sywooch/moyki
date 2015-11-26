@@ -37,8 +37,8 @@ AppAsset::register($this);
         echo Nav::widget([
             'items' => [
                 ['label' => Yii::t('app', 'Orders'), 'url' => ['#']],
-                ['label' => Yii::t('app', 'History'), 'url' => ['#']],
-                ['label' => Yii::t('app', 'Owner history'), 'url' => ['#']],
+                ['label' => Yii::t('app', 'History'), 'url' => ['/admin/history/history']],
+                ['label' => Yii::t('app', 'Owner history'), 'url' => ['/admin/history/history-of-owners']],
                 ['label' => Yii::t('app', 'Statistics'), 'url' => ['#']],
                 ['label' => Yii::t('app', 'Wash Station'), 'url' => ['/admin/carwash']],
                 ['label' => Yii::t('app', 'Services and Vehicles'), 'url' => ['/admin/auto/vehicle-and-services']],

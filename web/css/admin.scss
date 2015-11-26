@@ -1,5 +1,5 @@
 body {
-.wrap{
+.wrap {
   max-width: 100%;
 }
   &.admin {
@@ -32,14 +32,41 @@ body {
     }
     &.admin {
       .row {
-        .width{
-          max-width: 800px;
-        }
-        .container{
+        padding-top:40px;
+        padding-bottom: none;
+        .container {
           margin-top: 85px;
           background-color: #ffffff;
-
           width: 100%;
+        }
+        .container_history {
+          margin-top: 40px;
+          padding-top: 20px;
+          padding-bottom: 100%;
+          background-color: #ffffff;
+          width: 100%;
+          .table {
+            margin-top: 20px;
+            width: 100%;
+            background-color: #d3edfc;
+            border-color: #ffffff;
+            text-align-all: center;
+            border: 1px;
+            .time{
+              border: 12px;
+            }
+            .name{
+              border: 12px;
+            }
+            .action{
+              border: 12px;
+            }
+            .phone{
+              border: 12px;
+            }
+          }
+        }
+      }
         }
         .add-button {
           height: 45px;
@@ -138,7 +165,6 @@ body {
         }
       }
 
-    }
-
-  }
 }
+
+
