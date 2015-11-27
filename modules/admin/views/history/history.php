@@ -25,15 +25,24 @@ use kartik\date\DatePicker;
         <div class="col-xs-7 body">
             <div class="col-xs-6">
 
-                <? echo DatePicker::widget([
+                <?= DatePicker::widget([
                     'name' => 'check_issue_date',
-                    'value' => date('d-M-Y', strtotime('+2 days')),
-                    'options' => ['placeholder' => 'Вверите дату'],
+                    'value' => date('d-M-Y', strtotime('today')),
+                    'options' => ['placeholder' => 'Введите дату'],
+                    'language' => 'en',
                     'pluginOptions' => [
                         'format' => 'dd-M-yyyy',
-                        'todayHighlight' => true
-                        ],
-                    ]);
+                        'todayHighlight' => true,
+                        'autoclose' => true
+                    ],
+                    'pluginEvents' => [
+                        "changeDate" => "function(e) {
+                          var date = $('[name=\"check_issue_date\"]').val();
+                          alert(date);
+                          //console.log(new Date(date).getTime()); //to timestamp
+                        }",
+                    ]
+                ]);
                 ?>
             </div>
             <div class="col-xs-6">

@@ -49,13 +49,14 @@ use kartik\date\DatePicker;
 
                 <div class="col-xs-8">
                     <label>Когда</label>
-                    <? echo DatePicker::widget([
+                    <?= DatePicker::widget([
                         'name' => 'check_issue_date',
-                        'value' => date('d-M-Y', strtotime('+2 days')),
-                        'options' => ['placeholder' => 'Вверите дату'],
+                        'value' => date('d-M-Y', strtotime('today')),
+                        'options' => ['placeholder' => 'Введите дату'],
                         'pluginOptions' => [
                             'format' => 'dd-M-yyyy',
-                            'todayHighlight' => true
+                            'todayHighlight' => true,
+                            'autoclose' => true
                         ],
                     ]);
                     ?>
