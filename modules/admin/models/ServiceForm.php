@@ -62,10 +62,14 @@ class ServiceForm extends Model{
             $service_model->description = $this->description;
             $service_model->type = $this->type;
             $image_service_upload = 'images/uploads/vehicle/';
-            $image_1_path = $image_service_upload . $this->image_1->baseName .'-'.uniqid() . '.'.$this->image_1->extension;
-            $image_2_path = $image_service_upload . $this->image_2->baseName .'-'.uniqid() . '.'.$this->image_2->extension;
-            if($this->image_1->saveAs($image_1_path)){  $service_model->image_1 = '/'.$image_1_path;  }
-            if($this->image_2->saveAs($image_2_path)){  $service_model->image_2 = '/'.$image_2_path;  }
+            if(!is_null($this->image_1)) {
+                $image_1_path = $image_service_upload . $this->image_1->baseName . '-' . uniqid() . '.' . $this->image_1->extension;
+                if($this->image_1->saveAs($image_1_path)){  $service_model->image_1 = '/'.$image_1_path;  }
+            }
+            if(!is_null($this->image_2)) {
+                $image_2_path = $image_service_upload . $this->image_2->baseName . '-' . uniqid() . '.' . $this->image_2->extension;
+                if($this->image_2->saveAs($image_2_path)){  $service_model->image_2 = '/'.$image_2_path;  }
+            }
 
             $service_model->save();
             return true;

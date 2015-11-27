@@ -48,8 +48,16 @@ class ServiceController extends Controller
 
         if($serviceForm->load(Yii::$app->request->post()) and $serviceForm->validate()){
 
-            $serviceForm->image_1 = UploadedFile::getInstance($serviceForm, 'image_1');
-            $serviceForm->image_2 = UploadedFile::getInstance($serviceForm, 'image_2');
+            if($serviceInstance->image_1 != $serviceForm->image_1) {
+                $serviceForm->image_1 = UploadedFile::getInstance($serviceForm, 'image_1');
+            }else{
+                $serviceForm->image_1 = null;
+            }
+            if($serviceInstance->image_2 != $serviceForm->image_2) {
+                $serviceForm->image_2 = UploadedFile::getInstance($serviceForm, 'image_2');
+            }else{
+                $serviceForm->image_2 = null;
+            }
 
             if($serviceForm->uploadImageEdit($serviceInstance)) {
                 Yii::$app->session->setFlash('service_updated', 'Услуга успешно изменена');
@@ -69,14 +77,16 @@ class ServiceController extends Controller
             if ($serviceModel->delete()) {
                 $response = [
                     'status' => 'ok',
-                    'service_id' => $id_service,
-                    'msg' => 'Услуга удалена'
+                    'element_id' => $id_service,
+                    'msg' => 'Услуга удалена',
+                    'type' => 'service'
                 ];
             } else {
                 $response = [
                     'status' => 'error',
-                    'service_id' => $id_service,
-                    'msg' => 'Услуга не была удалена. Ошибка'
+                    'element_id' => $id_service,
+                    'msg' => 'Услуга не была удалена. Ошибка',
+                    'type' => 'service'
                 ];
             }
             echo Json::encode($response);

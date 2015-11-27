@@ -11,7 +11,7 @@ $(function(){
                var data = $.parseJSON(answer);
                console.log(data);
                if (data.status == 'ok') {
-                   $('.body[data-element-id="' + data.service_id +'"]').fadeOut(2000);
+                   $('.'+ data.type + '[data-element-id="' + data.element_id +'"]').fadeOut(2000);
                } else {
                    alert(data.msg);
                }

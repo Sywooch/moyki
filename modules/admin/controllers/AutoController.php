@@ -5,6 +5,7 @@ namespace app\modules\admin\controllers;
 use app\modules\admin\models\Service;
 use app\modules\admin\models\Vehicle;
 use app\modules\admin\models\VehicleForm;
+use yii\helpers\Json;
 use yii\web\Controller;
 use yii\web\UploadedFile;
 use Yii;
@@ -79,14 +80,16 @@ class AutoController extends Controller
             if ($vehicleModel->delete()) {
                 $response = [
                     'status' => 'ok',
-                    'vehicle_id' => $id_vehicle,
-                    'msg' => 'Кузов удален'
+                    'element_id' => $id_vehicle,
+                    'msg' => 'Кузов удален',
+                    'type' => 'vehicle'
                 ];
             } else {
                 $response = [
                     'status' => 'error',
-                    'vehicle_id' => $id_vehicle,
-                    'msg' => 'Кузов не был удален. Ошибка'
+                    'element_id' => $id_vehicle,
+                    'msg' => 'Кузов не был удален. Ошибка',
+                    'type' => 'vehicle'
                 ];
             }
             echo Json::encode($response);

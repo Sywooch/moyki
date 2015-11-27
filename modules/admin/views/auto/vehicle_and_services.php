@@ -13,7 +13,7 @@ use yii\helpers\Html;
             <div class="h4" align="left">Кузова автомобилей</div>
 
             <?php foreach($vehicles as $vehicle):?>
-                <div class="col-xs-12 body" data-element-id="<?=$vehicle->id;?>">
+                <div class="col-xs-12 body vehicle" data-element-id="<?=$vehicle->id;?>">
                   <div class="col-xs-4 images">
                         <div class="col-xs-4 item">
                             <?=Html::img($vehicle->image_1, ['class' => 'img-responsive']);?>
@@ -61,7 +61,7 @@ use yii\helpers\Html;
 
 
             <?php foreach($services_main as $service):?>
-                <div class="col-xs-12 body" data-element-id="<?=$service->id;?>">
+                <div class="col-xs-12 body service" data-element-id="<?=$service->id;?>">
                   <div class="col-xs-2 images">
                     <div class="col-xs-6 item">
                         <?=Html::img($service->image_1, ['class' => 'img-responsive']);?>
@@ -103,7 +103,7 @@ use yii\helpers\Html;
 
 
             <?php foreach($services_add as $service):?>
-                <div class="col-xs-12  body" data-element-id="<?=$service->id;?>">
+                <div class="col-xs-12  body service" data-element-id="<?=$service->id;?>">
                     <div class="col-xs-2 images">
                         <div class="col-xs-6 item">
                             <?=Html::img($service->image_1, ['class' => 'img-responsive']);?>

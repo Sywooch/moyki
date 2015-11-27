@@ -22,8 +22,16 @@ $this->title = 'Редактирование новой услуги';?>
     ]);
 ?>
 
+<?php if(!is_null($serviceForm->image_1)):?>
+    <?= Html::img($serviceForm->image_1, ['class' => 'img-responsive']);?>
+<?php endif;?>
 <?= $form->field($serviceForm, 'image_1')->fileInput();?>
+
+<?php if(!is_null($serviceForm->image_2)):?>
+    <?= Html::img($serviceForm->image_2, ['class' => 'img-responsive']);?>
+<?php endif;?>
 <?= $form->field($serviceForm, 'image_2')->fileInput();?>
+
 <?= $form->field($serviceForm, 'title')->textInput(); ?>
 <?= $form->field($serviceForm, 'description')->textarea(); ?>
 <?= $form->field($serviceForm, 'type')->dropDownList( [
