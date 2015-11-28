@@ -34,7 +34,7 @@ use yii\helpers\Html;
                             </div>
                         </div>
                         <div class="col-xs-12 item">
-                            <textarea class="form-control">
+                            <textarea class="form-control desc">
                                 <?= $vehicle->description;?>
                             </textarea>
                         </div>
