@@ -58,6 +58,13 @@ use kartik\date\DatePicker;
                             'todayHighlight' => true,
                             'autoclose' => true
                         ],
+                        'pluginEvents' => [
+                            "changeDate" => "function(e) {
+                          var date = $('[name=\"check_issue_date\"]').val();
+                          alert(date);
+                          //console.log(new Date(date).getTime()); //to timestamp
+                        }",
+                        ]
                     ]);
                     ?>
                 </div>
