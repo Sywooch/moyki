@@ -4,7 +4,6 @@ use yii\widgets\ActiveForm;
 use yii\helpers\Url;
 use yii\helpers\Html;
 use kartik\date\DatePicker;
-
 ?>
 <?php $form = ActiveForm::begin([
     'id' => 'user-favourite-tours-form',

@@ -21,7 +21,6 @@ $this->title = 'Редактирование новой услуги';?>
         ],
     ]);
 ?>
-
 <?php if(!is_null($serviceForm->image_1)):?>
     <?= Html::img($serviceForm->image_1, ['class' => 'img-responsive']);?>
 <?php endif;?>

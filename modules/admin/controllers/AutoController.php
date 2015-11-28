@@ -58,9 +58,21 @@ class AutoController extends Controller
 
         if($vehicleForm->load(Yii::$app->request->post()) and $vehicleForm->validate()){
 
-            $vehicleForm->image_1 = UploadedFile::getInstance($vehicleForm, 'image_1');
-            $vehicleForm->image_2 = UploadedFile::getInstance($vehicleForm, 'image_2');
-            $vehicleForm->image_3 = UploadedFile::getInstance($vehicleForm, 'image_3');
+            if($vehicleInstance->image_1 != $vehicleForm->image_1) {
+                $vehicleForm->image_1 = UploadedFile::getInstance($vehicleForm, 'image_1');
+            }else{
+                $vehicleForm->image_1 = null;
+            }
+            if($vehicleInstance->image_2 != $vehicleForm->image_2) {
+                $vehicleForm->image_2 = UploadedFile::getInstance($vehicleForm, 'image_2');
+            }else{
+                $vehicleForm->image_2 = null;
+            }
+            if($vehicleInstance->image_3 != $vehicleForm->image_3) {
+                $vehicleForm->image_3 = UploadedFile::getInstance($vehicleForm, 'image_3');
+            }else{
+                $vehicleForm->image_3 = null;
+            }
 
             if($vehicleForm->uploadImageEdit($vehicleInstance)) {
                 Yii::$app->session->setFlash('vehicle_updated', 'Кузов успешно изменен');
