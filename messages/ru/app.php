@@ -17,6 +17,8 @@ return [
     'You have logged in successful' => 'Авторизация прошла успешно',
     'Wash online' => 'Мойка.онлайн',
     'Step 1.Choose carcass of auto' => 'Шаг1.Выберите тип кузова',
+    'Step 2.Choose type of car wash' => 'Шаг2.Выберите тип мойки',
+    'Step 3.Choose additional services' => 'Шаг3.Выберите дополнительные услуги',
     'Profile' => 'Личный кабинет',
     'Admin panel' => 'Панель управления',
     'Orders' => 'Заказы',

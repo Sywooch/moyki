@@ -3,6 +3,8 @@
 namespace app\controllers;
 
 use app\models\RegistrationForm;
+use app\modules\admin\models\Service;
+use app\modules\admin\models\Vehicle;
 use Yii;
 use yii\filters\AccessControl;
 use yii\helpers\Json;
@@ -11,6 +13,8 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+
+
 
 class SiteController extends Controller
 {
@@ -54,15 +58,26 @@ class SiteController extends Controller
         ];
     }
 
+
     public function actionIndex()
     {
-        return $this->render('index');
+        return $this->render('index', [
+//            'model' => $model,
+        ]);
     }
-
     public function actionComfyTime()
     {
-        return $this->render('comfy-time');
+
+        $vehicles = Vehicle::find()->indexBy('id')->all();
+        $services_main = Service::find()->where(['type' => 'main'])->all();
+        $services_add = Service::find()->where(['type' => 'add'])->all();
+        return $this->render('comfy-time',[
+            'vehicles' => $vehicles,
+            'services_main' => $services_main,
+            'services_add' => $services_add,
+        ]);
     }
+
 
     public function actionLogin()
     {

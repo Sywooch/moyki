@@ -11,6 +11,27 @@
 body{
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
+
+  .add-button-site {
+    height: 45px;
+    margin-top: 45px;
+    padding: 12px 15px;
+    text-transform: uppercase;
+    background: $add-button;
+    color: white;
+    font-weight: 600;
+    border-radius: $border-radius;
+    font-size: 1.188em;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 2px solid $add-button-hover;
+    &:hover {
+      background: $add-button-hover;
+    }
+    &:active {
+      box-shadow: inset 0px 2px $add-button-active;
+    }
+  }
   .custom-container{
     width: 980px;
     margin: 0px auto;
@@ -147,7 +168,7 @@ body{
                   content: '';
                   width: 20px;
                   height: 20px;
-                  background-image: url("/images/icons-moyki.png");
+                  background-image: url("/web/images/icons-moyki.png");
                   background-position: center -5px;
                   margin-top: 11px;
                   margin-left: -24px;
@@ -162,14 +183,14 @@ body{
   .wrap{
     @include linear-gradient(bottom, top, $header-bottom, $wrap-bottom);
     .bottom-bg{
-      background-image: url("/images/static/bottom-bg.png");
+      background-image: url("/web/images/static/bottom-bg.png");
       background-size: cover;
       height: 270px;
     }
     &:before{
       position: absolute;
       content: '';
-      background-image: url("/images/static/header-bg.png");
+      background-image: url("/web/images/static/header-bg.png");
       background-size: cover;
 //      height: 0px;
       width: 100%;
