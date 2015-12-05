@@ -41,51 +41,52 @@ $this->title = Yii::t('app', 'Wash online');
                         </div>
                     </div>
                 <?php endforeach;?>
+
+                <div class="right">
+
+                </div>
             </div>
     </div>
 
 
 <!---------------------------(two)---------------------------------->
 
-    <div class="step two container-steps">
+    <div class="step two">
 
 
-        <div class="">
-        <div class="left">
+        <div class="container">
+
             <div class="step-header">
                 <h2><?=Yii::t('app', 'Step 2.Choose type of car wash');?></h2>
             </div>
             <?php foreach($services_main as $service):?>
+            <div class="left">
 
+                <div class="block">
 
-                <div class="body service">
-                    <div class="images">
-                        <div class="item">
+                        <div class="img">
                            <h2><?=Html::img($service->image_1, ['class' => 'img-responsive']);?></h2>
                         </div>
 
-                    </div>
-                    <div class="step-title">
-                        <div class="item">
-                            <div class="form">
-                                <div class="form-control">
-                                    <?= $service->title;?>
+                    <div class="text-one">
+                        <div class="form">
+                            <div class="item">
+                                <div class="head-text">
+                                    <h4><?= $service->title;?></h4>
                                 </div>
                             </div>
-                        </div>
-                        <div class="item">
-                            <div class="form">
-                            <div class="form-control">
-                                <?= $service->description;?>
-                            </div>
+                            <div class="item">
+                                <div class="foot-text">
+                                    <?= $service->description;?>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-
+            </div>
             <?php endforeach;?>
-        </div>
+
         <div class="right">
 
         </div>
@@ -97,33 +98,32 @@ $this->title = Yii::t('app', 'Wash online');
     <div class="step three steps">
 
 
-        <div class="">
+        <div class="container">
         <div class="left">
             <div class="step-header">
                 <h2><?=Yii::t('app', 'Step 3.Choose additional services');?></h2>
             </div>
             <?php foreach($services_add as $service):?>
 
+                <div class="left">
 
-                <div class="body service">
-                    <div class="images">
-                        <div class="item">
+                    <div class="block">
+                        <div class="img">
                             <?=Html::img($service->image_1, ['class' => 'img-responsive']);?>
                         </div>
-                    </div>
-                    <div class="step-title">
-                        <div class="item">
+
+                        <div class="text-one">
                             <div class="form">
-                                <div class="form-control">
-                                    <?= $service->title;?>
+                                <div class="item">
+                                    <div class="head-text">
+                                        <?= $service->title;?>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="item">
-                            <div class="form">
-                            <div class="form-control">
-                                <?= $service->description;?>
-                            </div>
+                            <div class="item">
+                                <div class="foot-text">
+                                    <?= $service->description;?>
+                                </div>
                             </div>
                         </div>
                     </div>

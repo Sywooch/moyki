@@ -1,6 +1,12 @@
 .steps{
   min-height: 650px;
   padding: 0px;
+  z-index: 10;
+  .container{
+//    background-color: hsl(207, 43%, 96%) none repeat scroll 0 0;
+    min-width: 800px;
+    background-color: black;
+  }
   .main-header{
     background: $blue;
     font-size: 2.263em;
@@ -10,14 +16,13 @@
     line-height: 60px;
     padding: 0px 65px;
   }
+
   .step{
+    margin-bottom: 100px;
     &.big-padding{
       padding: 0px 65px;
     }
-    .container{
-      color: hsl(205, 42%, 24%);
-      min-width: 800px;
-    }
+
     &.right{
       width: 160px;
       float: right;
@@ -30,6 +35,8 @@
   .step-header {
     line-height: 32px;
     margin: 20px -65px;
+    margin-left: 0px;
+    margin-bottom: 12px;
     padding: 0 65px;
     background: hsla(0, 0%, 0%, 0) none repeat scroll 0 0;
     color: hsl(202, 80%, 52%);
@@ -52,11 +59,20 @@
     clear: both;
     content: " ";
     display: table;
-
-    :hover{
+    &:hover{
+      background-color: #c5dbec;
       border-bottom: medium none;
-      color: hsl(205, 21%, 39%);
+      &:target {
+        border: 2px solid #D4D4D4;
+        background-color: #005a92;
+
+      }
     }
+
+
+
+
+
     .img {
       padding-left: 20px;
       padding-top: 20px;
@@ -68,17 +84,9 @@
       background-repeat: no-repeat;
       height: 120px;
       width: 165px;
-      *::-moz-placeholder {
-        color: hsl(205, 42%, 24%);
-
-      }
-      * {
-        box-sizing: border-box;
-        cursor: default;
-      }
     }
     .text-one{
-      align-content: center;
+      align-content: justify;
       .head-text{
         float: left;
         margin: 20px 0 10px;
@@ -87,12 +95,25 @@
         color: hsl(204, 45%, 23%);
         font-weight: bold;
         text-transform: uppercase;
-        transition: all 0.1s ease 0s;
+        transition: all 0.7s ease 0s;
         box-sizing: border-box;
+        max-height: 32px;
+        &:hover{
+          border-bottom: medium none;
+          color: #ffffff;
+        }
+
+        .dashed {
+          border-bottom: 1px dashed hsl(202, 80%, 52%);
+          color: hsl(204, 45%, 23%);
+          font-weight: 800;
+          text-transform: uppercase;
+          transition: all 0.1s ease 0s;
+        }
 
         h4 {
-          font-size: 17px;
-          font-weight: bold;
+          font-size: 16px;
+          font-weight: 600;
         }
       }
       .foot-text{
