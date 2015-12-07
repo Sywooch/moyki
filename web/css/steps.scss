@@ -3,9 +3,12 @@
   padding: 0px;
   z-index: 10;
   .container{
-//    background-color: hsl(207, 43%, 96%) none repeat scroll 0 0;
-    min-width: 800px;
-    background-color: black;
+    background-color: hsl(207, 43%, 96%);
+    margin-bottom: 0px;
+//    none repeat scroll 0 0;
+    width: 980px;
+//    margin-bottom: 0px;
+    height: 100%;
   }
   .main-header{
     background: $blue;
@@ -18,7 +21,9 @@
   }
 
   .step{
-    margin-bottom: 100px;
+    margin-bottom: 0px;
+
+
     &.big-padding{
       padding: 0px 65px;
     }
@@ -28,7 +33,7 @@
       float: right;
     }
     &.left{
-      width: 600px;
+      max-width: 600px;
       float: left;
     }
   }
@@ -36,16 +41,24 @@
     line-height: 32px;
     margin: 20px -65px;
     margin-left: 0px;
+    margin-top: 60px;
     margin-bottom: 12px;
     padding: 0 65px;
     background: hsla(0, 0%, 0%, 0) none repeat scroll 0 0;
     color: hsl(202, 80%, 52%);
+
+
     h2 {
       font-family: "Open Sans";
       font-size: 33px;
       font-weight: bold;
     }
 
+  }
+  .line{
+    border-bottom: 1px dashed hsl(202, 80%, 52%);
+    width: 500px;
+    margin-left: 65px;
   }
   .block {
     text-align: justify;
@@ -59,6 +72,7 @@
     clear: both;
     content: " ";
     display: table;
+
     &:hover{
       background-color: #c5dbec;
       border-bottom: medium none;
@@ -68,10 +82,6 @@
 
       }
     }
-
-
-
-
 
     .img {
       padding-left: 20px;
@@ -130,6 +140,7 @@
     }
 
   }
+  .three
 //  .block .element{
 //    border: solid 1px #C7CADD;
 //    margin: 0px 3px 3px 0px;

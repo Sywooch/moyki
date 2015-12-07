@@ -41,12 +41,14 @@ $this->title = Yii::t('app', 'Wash online');
                         </div>
                     </div>
                 <?php endforeach;?>
-
+        <br><br><br>
+                <hr class="line">
                 <div class="right">
 
                 </div>
             </div>
     </div>
+
 
 
 <!---------------------------(two)---------------------------------->
@@ -86,7 +88,8 @@ $this->title = Yii::t('app', 'Wash online');
 
             </div>
             <?php endforeach;?>
-
+            <br><br><br>
+            <hr class="line">
         <div class="right">
 
         </div>
@@ -108,6 +111,7 @@ $this->title = Yii::t('app', 'Wash online');
                 <div class="left">
 
                     <div class="block">
+
                         <div class="img">
                             <?=Html::img($service->image_1, ['class' => 'img-responsive']);?>
                         </div>
@@ -131,6 +135,7 @@ $this->title = Yii::t('app', 'Wash online');
 
 
             <?php endforeach;?>
+            <br><br><br>
         </div>
         <div class="right col-xs-4">
 
