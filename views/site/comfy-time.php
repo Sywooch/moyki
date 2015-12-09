@@ -24,7 +24,7 @@ $this->title = Yii::t('app', 'Wash online');
                                     <?=Html::img($vehicle->image_1, ['class' => 'img-responsive']);?>
                                 </div>
 
-                                <div class="text-one">
+                                <div class="steps-text">
                                     <div class="form">
                                         <div class="item">
                                             <div class="head-text">
@@ -43,9 +43,7 @@ $this->title = Yii::t('app', 'Wash online');
                 <?php endforeach;?>
         <br><br><br>
                 <hr class="line">
-                <div class="right">
-
-                </div>
+                <div class="right"></div>
             </div>
     </div>
 
@@ -53,7 +51,7 @@ $this->title = Yii::t('app', 'Wash online');
 
 <!---------------------------(two)---------------------------------->
 
-<!--    <div class="step">-->
+    <div class="step">
 
 
         <div class="container">
@@ -66,11 +64,16 @@ $this->title = Yii::t('app', 'Wash online');
 
                 <div class="block">
 
-                        <div class="img ">
-                           <h2><?=Html::img($service->image_1, ['class' => 'img-responsive']);?></h2>
+                        <div class="img">
+                           <?=Html::img($service->image_1, ['class' => 'img-responsive']);?>
                         </div>
 
-                    <div class="text-one">
+                    <span class="type <?=$service->type;?>">
+                        <?=Html::img("/images/static/service-ease.png", ['class' => 'img-responsive']);?>
+                    </span>
+
+
+                    <div class="steps-text">
                         <div class="form">
                             <div class="item">
                                 <div class="head-text">
@@ -84,65 +87,50 @@ $this->title = Yii::t('app', 'Wash online');
                             </div>
                         </div>
                     </div>
+
                 </div>
 
             </div>
             <?php endforeach;?>
             <br><br><br>
             <hr class="line">
-        <div class="right">
-
-        </div>
+        <div class="right"></div>
        </div>
-<!--    </div>-->
+    </div>
 
 <!-------------------------(three)--------------------------------->
 
-    <div class="step three steps">
-
+    <div class="step">
 
         <div class="container">
+
         <div class="left">
 
             <div class="step-header">
                 <h2><?=Yii::t('app', 'Step 3.Choose additional services');?></h2>
             </div>
-            <div class="three-block">
-
+            <div class="three-container">
 
                 <div class="left">
-
 
                        <div class="row">
 
                             <?php foreach($services_add as $key=>$service):?>
 
-                            <div class="col-xs-6 tonic <?=(($key % 2) == 0)?'even':'';?>">
-                                <div class="image-tonic type <?=$image->type;?>">
-                                    <?=Html::img($service->image_1, ['class' => 'img-responsive']);?>
-                                </div>
-
-
-                                <div class="text-tonic">
-                                    <div class="form">
-                                        <div class="item">
-                                            <div class="head-text">
-                                                <?= $service->title;?>
-                                            </div>
-                                        </div>
+                                <div class="col-xs-6 blocks <?=(($key % 2) == 0)?'even':'';?>">
+                                    <div class="image-tonic">
+                                        <?=Html::img($service->image_1, ['class' => 'img-responsive']);?>
                                     </div>
+                                            <?= $service->title;?>
                                 </div>
-                            </div>
-                          <?php endforeach;?>
+
+                            <?php endforeach;?>
                        </div>
-                        <div class="mini-block-left"></div>
                 </div>
             </div>
             <br><br><br>
         </div>
-        <div class="right">
-
-        </div>
+        <div class="right"></div>
        </div>
     </div>
 </div>

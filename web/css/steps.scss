@@ -2,12 +2,14 @@
   min-height: 650px;
   padding: 0px;
   z-index: 10;
+
   .container{
     background-color: hsl(207, 43%, 96%);
     margin-bottom: 0px;
     width: 980px;
     height: 100%;
   }
+
   .main-header{
     background: $blue;
     font-size: 2.263em;
@@ -20,11 +22,9 @@
 
   .step{
     margin-bottom: 0px;
-
     &.big-padding{
       padding: 0px 65px;
     }
-
     &.right{
       width: 160px;
       float: right;
@@ -34,6 +34,7 @@
       float: left;
     }
   }
+
   .step-header {
     line-height: 32px;
     margin: 20px -65px;
@@ -49,11 +50,13 @@
       font-weight: bold;
     }
   }
+
   .line{
     border-bottom: 1px dashed hsl(202, 80%, 52%);
     width: 500px;
     margin-left: 65px;
   }
+
   .block {
     text-align: justify;
     margin-left: 65px;
@@ -66,7 +69,6 @@
     clear: both;
     content: " ";
     display: table;
-
     &:hover{
       background-color: $step-item-hover;
       border-bottom: medium none;
@@ -88,7 +90,11 @@
       height: 120px;
       width: 165px;
     }
-    .text-one{
+    #span{
+      margin-top: 1px;
+    }
+
+    .steps-text{
       align-content: justify;
       .head-text{
         float: left;
@@ -96,15 +102,19 @@
         margin-top: 10px;
         border-bottom: 1px dashed hsl(202, 80%, 52%);
         color: hsl(204, 45%, 23%);
-        font-weight: bold;
+        font-weight: 900 bold;
+        font-family: "Tahoma", "sans-serif";
         text-transform: uppercase;
         transition: all 0.7s ease 0s;
         box-sizing: border-box;
         max-height: 32px;
+
         &:hover{
           border-bottom: medium none;
           color: #ffffff;
         }
+
+
         .dashed {
           border-bottom: 1px dashed hsl(202, 80%, 52%);
           color: hsl(204, 45%, 23%);
@@ -117,40 +127,47 @@
           font-weight: 600;
         }
       }
+
       .foot-text{
         color: hsl(212, 23%, 66%);
         font-family: "Open Sans";
-        font-size: 11px;
+        font-size: 14px;
         width: 330px;
         margin: 0;
         box-sizing: border-box;
-        cursor: default;
+        cursor: pointer;
         padding-top: -15px;
         float: left;
       }
     }
   }
-  .three-block{
+
+  .three-container{
     margin-left: 65px;
     width: 500px;
     list-style: outside none none;
     color: hsl(205, 42%, 24%);
     margin-top: 20px;
 
-    .tonic{
+    .blocks{
       height: 140px;
       width: 245px;
       text-align: center;
+      font-family: "Tahoma", "sans-serif";
+      font-weight: bold;
       margin-bottom: 10px;
       background-color: #ffffff;
       padding-top: 35px;
-
+      cursor: pointer;
       &:hover{
         background-color: $step-item-hover;
+        font-size: 20px;
       }
       &:active,&:focus{
         background-color: $step-item-active;
+        color: #ffffff;
       }
+
       .image-tonic {
         img {
           display: block;
@@ -166,6 +183,7 @@
         transition: all 0.1s ease 0s;
         text-align: center;
       }
+
       &.even{
         margin-right: 10px;
       }
@@ -174,19 +192,16 @@
 
   .type{
     position: relative;
-    left: 150px;
+    left: -50px;
     top: 20px;
     &.three{
-      background: url('/web/images/staitic/');
+      background: url('/web/images/static/complex.png');
     }
     &.two{
-      background: url('/web/images/static/');
+      background: url('/web/images/static/service-all.png');
     }
     &.one{
-      background: url('/web/images/static/');
+      background: url('/web/images/static/service-ease.png');
     }
   }
-
-
-
 }
