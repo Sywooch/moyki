@@ -135,22 +135,5 @@ $this->title = Yii::t('app', 'Wash online');
         <div class="right"></div>
        </div>
     </div>
-<!----------------------------(four)------------------------------>
-    <div class="step">
-
-        <div class="container">
-
-
-
-                <div class="step-header">
-                    <h2><?=Yii::t('app', 'Step 4.Choose the wash cycle');?></h2>
-                </div>
-            <div class="left">
-
-            </div>
-
-        </div>
-
-    </div>
 
 </div>
