@@ -96,6 +96,37 @@
 
     .steps-text{
       align-content: justify;
+      .head-text2{
+        float: left;
+        margin: 20px 0 10px;
+        margin-top: -10px;
+        border-bottom: 1px dashed hsl(202, 80%, 52%);
+        color: hsl(204, 45%, 23%);
+        font-weight: 900 bold;
+        font-family: "Tahoma", "sans-serif";
+        text-transform: uppercase;
+        transition: all 0.7s ease 0s;
+        box-sizing: border-box;
+        max-height: 32px;
+
+        &:hover{
+          border-bottom: medium none;
+          color: #ffffff;
+        }
+
+
+        .dashed {
+          border-bottom: 1px dashed hsl(202, 80%, 52%);
+          color: hsl(204, 45%, 23%);
+          font-weight: 800;
+          text-transform: uppercase;
+          transition: all 0.1s ease 0s;
+        }
+        h4 {
+          font-size: 16px;
+          font-weight: 600;
+        }
+      }
       .head-text{
         float: left;
         margin: 20px 0 10px;

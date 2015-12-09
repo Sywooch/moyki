@@ -69,7 +69,7 @@ $this->title = Yii::t('app', 'Wash online');
                         </div>
 
                     <span class="type <?=$service->type;?>">
-                        <?=Html::img("/images/static/service-ease.png", ['class' => 'img-responsive']);?>
+                        <?=Html::img("/images/static/service-ease.png", ['class' => 'one']);?>
                     </span>
 
 
@@ -130,7 +130,27 @@ $this->title = Yii::t('app', 'Wash online');
                 </div>
                 <br><br><br>
             </div>
+            <br><br><br>
+            <hr class="line">
             <div class="right"></div>
         </div>
     </div>
+    <!----------------------------(four)------------------------------>
+    <div class="step">
+
+        <div class="container">
+
+
+
+            <div class="step-header">
+                <h2><?=Yii::t('app', 'Step 4.Choose the wash cycle');?></h2>
+            </div>
+            <div class="left">
+
+            </div>
+
+        </div>
+
+    </div>
+
 </div>

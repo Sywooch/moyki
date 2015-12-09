@@ -76,7 +76,7 @@ $this->title = Yii::t('app', 'Wash online');
                     <div class="steps-text">
                         <div class="form">
                             <div class="item">
-                                <div class="head-text">
+                                <div class="head-text2">
                                     <h4><?= $service->title;?></h4>
                                 </div>
                             </div>
