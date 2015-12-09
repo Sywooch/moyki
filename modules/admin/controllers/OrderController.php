@@ -8,16 +8,12 @@ use Yii;
 class OrderController extends Controller
 {
     public function actionIndex(){
-        return $this->render('index', [
-
-        ]);
-    }
-
-    public function actionOrder(){
         $model = new OrderForm();
-        return $this->render('order', [
+        return $this->render('index', [
             'model' => $model
         ]);
     }
+
+
 
 }

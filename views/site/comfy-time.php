@@ -8,7 +8,7 @@ $this->title = Yii::t('app', 'Wash online');
 <div class="steps">
 <!-------------------------(one)--------------------------------->
 
-    <div class="step one">
+    <div class="step">
 
         <div class="main-header">
             <?=Yii::t('app', 'Step 1.Choose carcass of auto');?>
@@ -53,7 +53,7 @@ $this->title = Yii::t('app', 'Wash online');
 
 <!---------------------------(two)---------------------------------->
 
-    <div class="step two">
+<!--    <div class="step">-->
 
 
         <div class="container">
@@ -66,7 +66,7 @@ $this->title = Yii::t('app', 'Wash online');
 
                 <div class="block">
 
-                        <div class="img">
+                        <div class="img ">
                            <h2><?=Html::img($service->image_1, ['class' => 'img-responsive']);?></h2>
                         </div>
 
@@ -94,7 +94,7 @@ $this->title = Yii::t('app', 'Wash online');
 
         </div>
        </div>
-    </div>
+<!--    </div>-->
 
 <!-------------------------(three)--------------------------------->
 
@@ -103,41 +103,44 @@ $this->title = Yii::t('app', 'Wash online');
 
         <div class="container">
         <div class="left">
+
             <div class="step-header">
                 <h2><?=Yii::t('app', 'Step 3.Choose additional services');?></h2>
             </div>
-            <?php foreach($services_add as $service):?>
+            <div class="three-block">
+
 
                 <div class="left">
 
-                    <div class="block">
 
-                        <div class="img">
-                            <?=Html::img($service->image_1, ['class' => 'img-responsive']);?>
-                        </div>
+                       <div class="row">
 
-                        <div class="text-one">
-                            <div class="form">
-                                <div class="item">
-                                    <div class="head-text">
-                                        <?= $service->title;?>
+                            <?php foreach($services_add as $key=>$service):?>
+
+                            <div class="col-xs-6 tonic <?=(($key % 2) == 0)?'even':'';?>">
+                                <div class="image-tonic type <?=$image->type;?>">
+                                    <?=Html::img($service->image_1, ['class' => 'img-responsive']);?>
+                                </div>
+
+
+                                <div class="text-tonic">
+                                    <div class="form">
+                                        <div class="item">
+                                            <div class="head-text">
+                                                <?= $service->title;?>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="item">
-                                <div class="foot-text">
-                                    <?= $service->description;?>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                          <?php endforeach;?>
+                       </div>
+                        <div class="mini-block-left"></div>
                 </div>
-
-
-            <?php endforeach;?>
+            </div>
             <br><br><br>
         </div>
-        <div class="right col-xs-4">
+        <div class="right">
 
         </div>
        </div>

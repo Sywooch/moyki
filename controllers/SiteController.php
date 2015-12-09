@@ -78,6 +78,18 @@ class SiteController extends Controller
         ]);
     }
 
+    public function actionSuperUser()
+    {
+        $vehicles = Vehicle::find()->indexBy('id')->all();
+        $services_main = Service::find()->where(['type' => 'main'])->all();
+        $services_add = Service::find()->where(['type' => 'add'])->all();
+        return $this->render('super-user',[
+            'vehicles' => $vehicles,
+            'services_main' => $services_main,
+            'services_add' => $services_add,
+        ]);
+    }
+
 
     public function actionLogin()
     {
