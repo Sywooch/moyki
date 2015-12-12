@@ -83,7 +83,7 @@ class SiteController extends Controller
         $vehicles = Vehicle::find()->indexBy('id')->all();
         $services_main = Service::find()->where(['type' => 'main'])->all();
         $services_add = Service::find()->where(['type' => 'add'])->all();
-        return $this->render('super-user',[
+        return $this->render('owner',[
             'vehicles' => $vehicles,
             'services_main' => $services_main,
             'services_add' => $services_add,

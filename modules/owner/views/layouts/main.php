@@ -36,12 +36,11 @@ AppAsset::register($this);
         ]);
         echo Nav::widget([
             'items' => [
-                ['label' => Yii::t('app', 'Orders'), 'url' => ['/admin/orders/index']],
-                ['label' => Yii::t('app', 'History'), 'url' => ['/admin/history/history']],
-                ['label' => Yii::t('app', 'Owner history'), 'url' => ['/admin/history/history-of-owners']],
-                ['label' => Yii::t('app', 'Statistics'), 'url' => ['#']],
-                ['label' => Yii::t('app', 'Wash Station'), 'url' => ['/admin/carwash']],
-                ['label' => Yii::t('app', 'Services and Vehicles'), 'url' => ['/admin/auto/vehicle-and-services']],
+                ['label' => Yii::t('app', 'Orders'), 'url' => ['/owner/owner/orders']],
+                ['label' => Yii::t('app', 'History'), 'url' => ['/owner/owner/history']],
+                ['label' => Yii::t('app', 'Statistics'), 'url' => ['/owner/owner/statistic']],
+                ['label' => Yii::t('app', 'Administrators'), 'url' => ['/owner/owner/administrators']],
+                ['label' => Yii::t('app', 'Discounts'), 'url' => ['/owner/owner/discounts']],
                 ['label' =>   'Киев',
                     'items' => [
                         ['label' => Yii::t('app','Днепропетровск'), 'url' => ['/site/index']],

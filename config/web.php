@@ -10,8 +10,12 @@ $config = [
     'modules' => [
         'admin' => [
             'class' => 'app\modules\admin\Admin',
-            // ... other configurations for the module ...
         ],
+        'owner' => [
+            'class' => 'app\modules\owner\Owner',
+        ],
+            // ... other configurations for the module ...
+
     ],
     'components' => [
         'request' => [

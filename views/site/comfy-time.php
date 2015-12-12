@@ -118,7 +118,7 @@ $this->title = Yii::t('app', 'Wash online');
                             <?php foreach($services_add as $key=>$service):?>
 
                                 <div class="col-xs-6 blocks <?=(($key % 2) == 0)?'even':'';?>">
-                                    <div class="image-tonic">
+                                    <div class="image-blocks">
                                         <?=Html::img($service->image_1, ['class' => 'img-responsive']);?>
                                     </div>
                                             <?= $service->title;?>
@@ -136,4 +136,21 @@ $this->title = Yii::t('app', 'Wash online');
        </div>
     </div>
 
+    <!----------------------------(four)------------------------------>
+    <div class="step">
+
+        <div class="container">
+
+
+
+            <div class="step-header">
+                <h2><?=Yii::t('app', 'Step 4.Choose the wash cycle');?></h2>
+            </div>
+            <div class="left">
+
+            </div>
+
+        </div>
+
+    </div>
 </div>

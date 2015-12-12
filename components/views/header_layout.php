@@ -25,7 +25,7 @@ use yii\bootstrap\Dropdown;
     echo Dropdown::widget([
         'items' => [
             ['label' => Yii::t('app', 'Profile'), 'url' => '#'],
-            ['label' => Yii::t('app', 'Admin panel'), 'url' => '#'],
+            ['label' => Yii::t('app', 'Admin panel'), 'url' => \yii\helpers\Url::to(['/owner/board/index'])],
             ['label' => Yii::t('app', 'Exit'), 'url' => \yii\helpers\Url::to(['site/logout']), 'linkOptions' => ['data-method' => 'post']],
         ],
     ]);

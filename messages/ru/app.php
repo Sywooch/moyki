@@ -21,10 +21,13 @@ return [
     'Step 3.Choose additional services' => 'Шаг3.Выберите дополнительные услуги',
     'Step 4.Choose the wash cycle' => 'Шаг4.Выберите время мойки',
     'Admin panel' => 'Панель управления',
+    'Administrators' => 'Администраторы',
+    'Discounts' => 'Скидки',
     'Orders' => 'Заказы',
     'History' => 'История',
     'Owner history' => 'История Владельцев',
     'Statistics' => 'Статистика',
     'Wash Station' => 'Мойки',
-    'Services and Vehicles' => 'Услуги и Кузова'
+    'Services and Vehicles' => 'Услуги и Кузова',
+    'Profile' => 'Профиль'
 ];

@@ -114,7 +114,6 @@
           color: #ffffff;
         }
 
-
         .dashed {
           border-bottom: 1px dashed hsl(202, 80%, 52%);
           color: hsl(204, 45%, 23%);
@@ -144,7 +143,6 @@
           border-bottom: medium none;
           color: #ffffff;
         }
-
 
         .dashed {
           border-bottom: 1px dashed hsl(202, 80%, 52%);
@@ -199,14 +197,14 @@
         color: #ffffff;
       }
 
-      .image-tonic {
+      .image-blocks {
         img {
           display: block;
           margin: auto;
         }
       }
 
-      &.text-tonic{
+      &.text-blocks{
         border-bottom: 1px dashed hsl(202, 80%, 52%);
         color: hsl(204, 45%, 23%);
         font-weight: bold;
@@ -225,14 +223,14 @@
     position: relative;
     left: -50px;
     top: 20px;
-    &.three{
-      background: url('/web/images/static/complex.png');
-    }
-    &.two{
-      background: url('/web/images/static/service-all.png');
-    }
-    &.one{
-      background: url('/web/images/static/service-ease.png');
-    }
+//    &.three{
+//      background: url('/web/images/static/complex.png');
+//    }
+//    &.two{
+//      background: url('/web/images/static/service-all.png');
+//    }
+//    &.one{
+//      background: url('/web/images/static/service-ease.png');
+//    }
   }
 }
