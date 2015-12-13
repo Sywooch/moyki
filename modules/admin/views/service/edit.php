@@ -37,6 +37,13 @@ $this->title = 'Редактирование новой услуги';?>
     'main' => 'Основная',
     'add' => 'Дополнительная',
 ], ['readonly' => true]); ?>
+
+<?= $form->field($serviceForm, 'service_type')->dropDownList( [
+    'churning mud' => 'Сбивание грязи',
+    'technical sink' => 'Техническая мойка',
+    'complex' => 'Комплекс',
+]); ?>
+
 <?= Html::submitButton('Редатировать', ['class'  => 'btn btn-success col-xs-4']); ?>
 <?=Html::a('Назад', ['/admin/auto/vehicle-and-services'],
     ['class' => 'btn btn-default col-xs-4 pull-right']);?>
@@ -44,3 +51,4 @@ $this->title = 'Редактирование новой услуги';?>
 
 
 <?php ActiveForm::end()?>
+<br><br><br>

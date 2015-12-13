@@ -12,12 +12,13 @@ class ServiceForm extends Model{
     public $title;
     public $description;
     public $type;
+    public $service_type;
 
     public function rules()
     {
         return
         [
-            [['title', 'description', 'type'], 'required'],
+            [['title', 'description', 'type', 'service_type'], 'required'],
             [['image_1', 'image_2'], 'file'],
 
 
@@ -34,7 +35,7 @@ class ServiceForm extends Model{
             'title' => 'Услуга',
             'description' => 'Что входилд в услугу',
             'type' => 'Тип услуги',
-
+            'service_type' => 'Тип мойки',
         ];
     }
     public function uploadImage(){
@@ -43,6 +44,7 @@ class ServiceForm extends Model{
             $service_model->title = $this->title;
             $service_model->description = $this->description;
             $service_model->type = $this->type;
+            $service_model->service_type = $this->service_type;
             $image_service_upload = 'images/uploads/vehicle/';
             $image_1_path = $image_service_upload . $this->image_1->baseName .'-'.uniqid() . '.'.$this->image_1->extension;
             $image_2_path = $image_service_upload . $this->image_2->baseName .'-'.uniqid() . '.'.$this->image_2->extension;
@@ -61,6 +63,7 @@ class ServiceForm extends Model{
             $service_model->title = $this->title;
             $service_model->description = $this->description;
             $service_model->type = $this->type;
+            $service_model->service_type = $this->service_type;
             $image_service_upload = 'images/uploads/vehicle/';
             if(!is_null($this->image_1)) {
                 $image_1_path = $image_service_upload . $this->image_1->baseName . '-' . uniqid() . '.' . $this->image_1->extension;

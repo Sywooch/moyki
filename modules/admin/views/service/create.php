@@ -37,6 +37,13 @@ $service_model->type = $service_type;
     'main' => 'Основная',
     'add' => 'Дополнительная',
 ]); ?>
+
+<?= $form->field($service_model, 'service_type')->dropDownList( [
+    'churning mud' => 'Сбивание грязи',
+    'technical sink' => 'Техническая мойка',
+    'complex' => 'Комплекс',
+]); ?>
+
 <?= Html::submitButton('Сохранить', ['class'  => 'btn btn-success col-xs-4']); ?>
 <?=Html::a('Назад', ['/admin/auto/vehicle-and-services'],
     ['class' => 'btn btn-default col-xs-4 pull-right']);?>
