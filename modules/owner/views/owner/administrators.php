@@ -1,145 +1,72 @@
 <?php
-$this->title = 'Администраторы';
+$this->title = 'Владелец | Администраторы';
 use yii\helpers\Html;
+use yii\widgets\ActiveForm;
+use yii\helpers\Url;
+use yii\gii\generators\form;
 ?>
 
-<?= \app\components\AdminAlertWidget::widget(['type' => 'vehicle_created']);?>
-<?= \app\components\AdminAlertWidget::widget(['type' => 'service_updated']);?>
+<?= \app\components\AdminAlertWidget::widget(['type' => 'administrators']);?>
 
-<div class="admin">
-    <div class="container">
-        <div class="row">
-            <div class="one-instance">
-                <div class="h4" align="left">Кузова автомобилей</div>
-
-                <?php foreach($vehicles as $vehicle):?>
-                    <div class="col-xs-12 body vehicle" data-element-id="<?=$vehicle->id;?>">
-                        <div class="col-xs-4 images">
-                            <div class="col-xs-4 item">
-                                <?=Html::img($vehicle->image_1, ['class' => 'img-responsive']);?>
-                            </div>
-                            <div class="col-xs-4  item">
-                                <?=Html::img($vehicle->image_2, ['class' => 'img-responsive']);?>
-                            </div>
-                            <div class="col-xs-4 item">
-                                <?=Html::img($vehicle->image_3, ['class' => 'img-responsive']);?>
-                            </div>
-                        </div>
-                        <div class="col-xs-7">
-                            <div class="col-xs-12 item">
-                                <div class="form">
-                                    <div class="form-control">
-                                        <?= $vehicle->title;?>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xs-12 item">
-                                <textarea class="form-control desc">
-                                    <?= $vehicle->description;?>
-                                </textarea>
-                            </div>
-                        </div>
-                        <div class="col-xs-1 item action">
-                            <?= Html::a(Html::tag('span', '', ['class' => 'glyphicon glyphicon-pencil']), \yii\helpers\Url::toRoute(['/admin/auto/edit', 'id_vehicle' => $vehicle->id]), ['class' => 'col-xs-12 edit']);?>
-                            <?= Html::a(Html::tag('span', '', ['class' => 'glyphicon glyphicon-trash']), \yii\helpers\Url::toRoute(['/admin/auto/delete', 'id_vehicle' => $vehicle->id]), ['class' => 'col-xs-12 delete']);?>
-
-                        </div>
-                    </div>
-
-                <?php endforeach;?>
-
-                <?= \yii\helpers\Html::a('Добавить',
-                    ['/admin/auto/create-vehicle'],
-                    ['class' => 'add-button']);?>
+<div class="row">
+    <?php foreach($administrator_list as $admin):?>
+        <div class="col-xs-12 administrator" data-element-id="<?=$admin->id;?>">
+            <div class="col-xs-5">
+                <?= $admin->name;?>
+            </div>
+            <div class="col-xs-5">
+                <?= $admin->phone;?>
+            </div>
+            <div class="list col-xs-2 item action">
+                <?= Html::a(Html::tag('span', '', ['class' => 'glyphicon glyphicon-trash']), \yii\helpers\Url::toRoute(['/owner/owner/delete', 'id_administrators' => $admin->id]), ['class' => 'col-xs-12 delete']);?>
             </div>
         </div>
-        <hr width="90%">
 
-        <div class="row">
-            <div class="one-instance">
-                <div class="h4" align="left">Типы услуг</div>
-
-
-                <?php foreach($services_main as $service):?>
-                    <div class="col-xs-12 body service" data-element-id="<?=$service->id;?>">
-                        <div class="col-xs-2 images">
-                            <div class="col-xs-6 item">
-                                <?=Html::img($service->image_1, ['class' => 'img-responsive']);?>
-                            </div>
-                            <div class="col-xs-6 item">
-                                <?=Html::img($service->image_2, ['class' => 'img-responsive']);?>
-                            </div>
-                        </div>
-                        <div class="col-xs-9">
-                            <div class="col-xs-12 item">
-                                <div class="form">
-                                    <div class="form-control">
-                                        <?= $service->title;?>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xs-12 item">
-                                <textarea class="form-control desc">
-                                    <?= $service->description;?>
-                                </textarea>
-                            </div>
-                        </div>
-                        <div class="col-xs-1 item action">
-                            <?= Html::a(Html::tag('span', '', ['class' => 'glyphicon glyphicon-pencil']), \yii\helpers\Url::toRoute(['/admin/service/edit', 'id_service' => $service->id]), ['class' => 'col-xs-12 edit']);?>
-                            <?= Html::a(Html::tag('span', '', ['class' => 'glyphicon glyphicon-trash']), \yii\helpers\Url::toRoute(['/admin/service/delete', 'id_service' => $service->id]), ['class' => 'col-xs-12 delete']);?>
-                        </div>
-                    </div>
-                <?php endforeach;?>
-                <?= \yii\helpers\Html::a('Добавить',
-                    ['/admin/service/create', 'type' => 'main'],
-                    ['class' => 'add-button']);?>
-            </div>
-        </div>
-        <hr width="90%">
-
-        <div class="row">
-            <div class="one-instance">
-                <div class="h4" align="left">Дополнительные услуги</div>
-
-
-                <?php foreach($services_add as $service):?>
-                    <div class="col-xs-12  body service" data-element-id="<?=$service->id;?>">
-                        <div class="col-xs-2 images">
-                            <div class="col-xs-6 item">
-                                <?=Html::img($service->image_1, ['class' => 'img-responsive']);?>
-                            </div>
-                            <div class="col-xs-6 item">
-                                <?=Html::img($service->image_2, ['class' => 'img-responsive']);?>
-                            </div>
-                        </div>
-                        <div class="col-xs-9">
-                            <div class="col-xs-12 item">
-                                <div class="form">
-                                    <div class="form-control">
-                                        <?= $service->title;?>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xs-12 item">
-                                <textarea class="form-control desc ">
-                                    <?= $service->description;?>
-                                </textarea>
-                            </div>
-                        </div>
-
-                        <div class="col-xs-1 action">
-                            <div class="icon">
-                                <?= Html::a(Html::tag('span', '', ['class' => 'glyphicon glyphicon-pencil']), \yii\helpers\Url::toRoute(['/admin/service/edit', 'id_service' => $service->id]), ['class' => 'col-xs-3 edit']);?>
-                                <?= Html::a(Html::tag('span', '', ['class' => 'glyphicon glyphicon-trash']), \yii\helpers\Url::toRoute(['/admin/service/delete', 'id_service' => $service->id]), ['class' => 'col-xs-3 delete']);?>
-                            </div>
-                        </div>
-                    </div>
-                <?php endforeach;?>
-                <?= \yii\helpers\Html::a('Добавить',
-                    ['/admin/service/create', 'type' => 'add'], ['class' => 'add-button']);?>
-
-            </div>
-        </div>
-        <hr width="90%"><br><br>
-    </div>
+    <?php endforeach; ?>
 </div>
+<?php $form = ActiveForm::begin([
+    'action' => Url::to(['/owner/owner/administrators']),
+    'options' => [
+        'class' => 'form-horizontal'
+    ],
+    'fieldConfig' => [
+        'template' => "{label}\n<div class=\"col-xs-12 \">{input}</div>\n<div class=\"col-xs-12\">{error}</div>",
+        'labelOptions' => ['class' => 'col-xs-12 control-label label-get-tour'],
+    ],
+]);
+?>
+
+
+<div class="row">
+    <div class="col-xs-12 item">
+        <div class="col-xs-10 item">
+            <div class="col-xs-6 item">
+                <?=$form->field($administrator_model, 'name')->textInput() ;?>
+
+            </div>
+            <div class="col-xs-6 item">
+                <?=$form->field($administrator_model, 'phone')->textInput() ;?>
+
+            </div>
+        </div>
+        <div class="list col-xs-2 item action">
+            <?= Html::a(Html::tag('span', '', ['class' => 'glyphicon glyphicon-trash']), \yii\helpers\Url::toRoute(['/owner/owner/delete', 'id_administrators' => $administrators->id]), ['class' => 'col-xs-12 delete']);?>
+        </div>
+    </div>
+
+<!--    ------------------------------------------------>
+    <div class="row col-xs-12" data-element-id="<?//=$administrators->id;?>">
+        <div class="col-xs-4">
+            <div class="list col-xs-6">
+                <?= Html::button('Добавить', ['class' => 'add-button']);?>
+            </div>
+            <div class="list col-xs-6">
+                <?= Html::submitButton('Сохранить', ['class' => 'add-button']);?>
+            </div>
+        </div>
+        <div class="list col-xs-8"></div>
+
+    </div>
+
+</div>
+<?php ActiveForm::end()?>

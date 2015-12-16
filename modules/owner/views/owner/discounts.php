@@ -1,3 +1,3 @@
 <?php
-echo "discounts";
+$this->title = 'Владелец | Скидки';
 ?>

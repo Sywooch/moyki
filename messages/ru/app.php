@@ -26,6 +26,7 @@ return [
     'Orders' => 'Заказы',
     'History' => 'История',
     'Owner history' => 'История Владельцев',
+    'Owner' => 'Владелец',
     'Statistics' => 'Статистика',
     'Wash Station' => 'Мойки',
     'Services and Vehicles' => 'Услуги и Кузова',

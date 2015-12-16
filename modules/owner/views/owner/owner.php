@@ -1,5 +1,5 @@
 <?php
-$this->title = 'Добавление нового кузова';
+$this->title = 'Владелец';
 use yii\widgets\ActiveForm;
 use yii\helpers\Url;
 use yii\helpers\Html;
