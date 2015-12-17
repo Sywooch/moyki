@@ -7,6 +7,7 @@
 @import "steps";
 @import "popup";
 @import "form";
+@import "owner";
 
 body{
   font-family: 'Open Sans', sans-serif;
@@ -199,7 +200,7 @@ body{
   footer{
     background: $footer-bg;
     margin-bottom: -60px;
-    height: 120px;
+    height: 160px;
     .custom-container{
       line-height: 120px;
       height: 100%;
