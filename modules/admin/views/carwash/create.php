@@ -62,5 +62,5 @@ use yii\helpers\Html;
 
 <?=Html::submitButton('Сохранить', ['class' => 'btn btn-success col-xs-4']);?>
 <?=Html::a('Назад', ['/admin/carwash'], ['class' => 'btn btn-default col-xs-4 pull-right']);?>
-
+<br><br><br>
 <?php ActiveForm::end();?>

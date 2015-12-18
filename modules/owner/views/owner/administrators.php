@@ -8,16 +8,16 @@ use yii\gii\generators\form;
 
 <?= \app\components\AdminAlertWidget::widget(['type' => 'administrators']);?>
 
-<div class="row">
+<div class="owner">
     <?php foreach($administrator_list as $admin):?>
         <div class="col-xs-12 administrator" data-element-id="<?=$admin->id;?>">
-            <div class="col-xs-5">
+            <div class="col-xs-5 data-list">
                 <?= $admin->name;?>
             </div>
-            <div class="col-xs-5">
+            <div class="col-xs-5 data-list">
                 <?= $admin->phone;?>
             </div>
-            <div class="list col-xs-2 item action">
+            <div class="list col-xs-1 item action">
                 <?= Html::a(Html::tag('span', '', ['class' => 'glyphicon glyphicon-remove']), \yii\helpers\Url::toRoute(['/owner/owner/delete-administrators', 'id_administrators' => $admin->id]), ['class' => 'col-xs-12 delete']);?>
             </div>
         </div>
@@ -37,7 +37,7 @@ use yii\gii\generators\form;
 ?>
 
 
-<div class="row">
+<div class="owner">
     <div class="col-xs-12 item">
         <div class="col-xs-10 item">
             <div class="col-xs-6 item">
@@ -49,13 +49,13 @@ use yii\gii\generators\form;
 
             </div>
         </div>
-        <div class="list col-xs-2 del">
-            <?= Html::a(Html::tag('span', '', ['class' => 'glyphicon glyphicon-remove']), \yii\helpers\Url::toRoute(['/owner/owner/delete-administrators', 'id_administrators' => $administrators->id]), ['class' => 'col-xs-12 delete']);?>
-        </div>
+<!--        <div class="list col-xs-2 del">-->
+<!--            --><?//= Html::a(Html::tag('span', '', ['class' => 'glyphicon glyphicon-remove']), \yii\helpers\Url::toRoute(['/owner/owner/delete-administrators', 'id_administrators' => $administrators->id]), ['class' => 'col-xs-12 delete']);?>
+<!--        </div>-->
     </div>
 
 <!--    ------------------------------------------------>
-    <div class="row col-xs-12" data-element-id="<?=$administrators->id;?>">
+    <div class=" col-xs-12" data-element-id="<?=$administrators->id;?>">
         <div class="col-xs-4">
             <div class="list col-xs-6">
                 <?= Html::button('Добавить', ['class' => 'add-button']);?>

@@ -64,7 +64,7 @@ AppAsset::register($this);
     </section>
 </header>
 
-<div class="wrap">
+<div class="wrap-admin-discount">
     <div class="custom-container">
         <div class="row">
             <?= $content ?>

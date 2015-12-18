@@ -7,13 +7,13 @@ use Yii;
 
 class OrderController extends Controller
 {
-    public function actionIndex(){
+
+    public function actionOrders(){
         $model = new OrderForm();
-        return $this->render('index', [
+        return $this->render('orders', [
             'model' => $model
         ]);
     }
-
 
 
 }

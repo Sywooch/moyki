@@ -15,6 +15,7 @@ class DiscountsForm extends Model{
             [
                 [['discount', 'phone'], 'required'],
                 [['phone', 'discount'], 'integer'],
+
             ];
     }
 

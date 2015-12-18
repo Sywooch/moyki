@@ -33,7 +33,7 @@ class OwnerController extends Controller{
 
         if($discountsForm->load(Yii::$app->request->post()) and $discountsForm->validate()){
             $discounts = new Discounts();
-            $discounts->phone = $discountsForm->phone;
+            $discounts->phone = $discountsForm->phonel;
             $discounts->discount = $discountsForm->discount;
 
             if($discounts->save()) {

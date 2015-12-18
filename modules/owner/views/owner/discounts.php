@@ -8,16 +8,16 @@ use yii\gii\generators\form;
 
 <?= \app\components\AdminAlertWidget::widget(['type' => 'discounts']);?>
 
-<div class="row">
+<div class="wrap">
     <?php foreach($discounts_list as $discount):?>
         <div class="col-xs-12 discounts" data-element-id="<?=$discount->id;?>">
-            <div class="col-xs-5">
+            <div class="col-xs-5 data-list">
                 <?= $discount->phone;?>
             </div>
-            <div class="col-xs-5">
+            <div class="col-xs-5 data-list">
                 <?= $discount->discount;?>
             </div>
-            <div class="list col-xs-2 item action">
+            <div class="list col-xs-1 item action">
                 <?= Html::a(Html::tag('span', '', ['class' => 'glyphicon glyphicon-remove']), \yii\helpers\Url::toRoute(['/owner/owner/delete-discounts', 'id_discounts' => $discount->id]), ['class' => 'col-xs-12 delete']);?>
             </div>
         </div>
@@ -37,7 +37,7 @@ use yii\gii\generators\form;
 ?>
 
 
-<div class="row">
+<div class="wrap">
     <div class="col-xs-12 item">
         <div class="col-xs-10 item">
             <div class="col-xs-6 item">
@@ -49,9 +49,9 @@ use yii\gii\generators\form;
 
             </div>
         </div>
-                <div class="list col-xs-2 del">
-                    <?= Html::a(Html::tag('span', '', ['class' => 'glyphicon glyphicon-remove']), \yii\helpers\Url::toRoute(['/owner/owner/delete-discounts', 'id_discounts' => $discount->id]), ['class' => 'col-xs-12 delete']);?>
-                </div>
+<!--                <div class="list col-xs-2 del">-->
+<!--                    --><?//= Html::a(Html::tag('span', '', ['class' => 'glyphicon glyphicon-remove']), \yii\helpers\Url::toRoute(['/owner/owner/delete-discounts', 'id_discounts' => $discount->id]), ['class' => 'col-xs-12 delete']);?>
+<!--                </div>-->
     </div>
 
     <!--    ------------------------------------------------>

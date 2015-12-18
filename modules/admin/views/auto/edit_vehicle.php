@@ -45,6 +45,6 @@ $this->title = 'Редактирование нового кузова';?>
 <?=Html::a('Назад', ['/admin/auto/vehicle-and-services'],
     ['class' => 'btn btn-default col-xs-4 pull-right']);?>
 
-
+<br><br><br>
 
 <?php ActiveForm::end()?>
