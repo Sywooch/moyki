@@ -36,7 +36,7 @@ AppAsset::register($this);
         ]);
         echo Nav::widget([
             'items' => [
-                ['label' => Yii::t('app', 'Orders'), 'url' => ['/owner/owner/orders']],
+                ['label' => Yii::t('app', 'Orders'), 'url' => ['/owner/owner/order']],
                 ['label' => Yii::t('app', 'History'), 'url' => ['/owner/owner/history']],
                 ['label' => Yii::t('app', 'Statistics'), 'url' => ['/owner/owner/statistic']],
                 ['label' => Yii::t('app', 'Administrators'), 'url' => ['/owner/owner/administrators']],

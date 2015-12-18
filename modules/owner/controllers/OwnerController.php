@@ -84,7 +84,7 @@ class OwnerController extends Controller{
     }
 
     public function actionOrders(){
-        return $this->render('orders', []);
+        return $this->render('order', []);
     }
 
     public function actionAdministrators(){
