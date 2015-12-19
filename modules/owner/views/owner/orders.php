@@ -1,3 +1,3 @@
 <?php
-echo "orders";
+$this->title = 'Владелец | Заказы';
 ?>

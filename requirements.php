@@ -2,10 +2,10 @@
 /**
  * Application requirement checker script.
  *
- * In orders to run this script use the following console command:
+ * In order to run this script use the following console command:
  * php requirements.php
  *
- * In orders to run this script from the web, you should copy it to the web root.
+ * In order to run this script from the web, you should copy it to the web root.
  * If you are using Linux you can create a hard link instead, using the following command:
  * ln requirements.php ../requirements.php
  */
@@ -32,7 +32,7 @@ if (extension_loaded('imagick')) {
     if (in_array('PNG', $imagickFormats)) {
         $imagickOK = true;
     } else {
-        $imagickMemo = 'Imagick extension should be installed with PNG support in orders to be used for image CAPTCHA.';
+        $imagickMemo = 'Imagick extension should be installed with PNG support in order to be used for image CAPTCHA.';
     }
 }
 
@@ -41,7 +41,7 @@ if (extension_loaded('gd')) {
     if (!empty($gdInfo['FreeType Support'])) {
         $gdOK = true;
     } else {
-        $gdMemo = 'GD extension should be installed with FreeType support in orders to be used for image CAPTCHA.';
+        $gdMemo = 'GD extension should be installed with FreeType support in order to be used for image CAPTCHA.';
     }
 }
 

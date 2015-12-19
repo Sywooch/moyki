@@ -1,5 +1,5 @@
 <?php
-$this->title = 'Создание мойки | мойка.онлайн';
+$this->title = 'Админ | Создание мойки';
 use yii\widgets\ActiveForm;
 use yii\helpers\Url;
 use yii\helpers\Html;
@@ -248,5 +248,5 @@ use kartik\time\TimePicker;
 
 <?=Html::submitButton('Сохранить', ['class' => 'btn btn-success col-xs-4', 'id' => 'create-carwash']);?>
 <?=Html::a('Назад', ['/admin/carwash'], ['class' => 'btn btn-default col-xs-4 pull-right']);?>
-
+<br><br><br>
 <?php ActiveForm::end();?>

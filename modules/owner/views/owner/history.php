@@ -1,10 +1,11 @@
 <?php
-$this->title = 'История';
+$this->title = 'Владелец | История';
 use yii\widgets\ActiveForm;
 use yii\helpers\Url;
 use yii\helpers\Html;
 use kartik\date\DatePicker;
 ?>
+
 <?php $form = ActiveForm::begin([
     'id' => 'user-favourite-tours-form',
     'action' => Url::toRoute(['/owner/owner/history']),

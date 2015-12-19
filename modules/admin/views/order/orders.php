@@ -1,5 +1,5 @@
 <?php
-$this->title = 'Заказы | мойка.онлайн';
+$this->title = 'Админ | Заказы';
 
 use yii\widgets\ActiveForm;
 use yii\helpers\Url;
@@ -7,7 +7,7 @@ use kartik\date\DatePicker;
 ?>
 <?php $form = ActiveForm::begin([
     'id' => 'user-favourite-tours-form',
-    'action' => Url::toRoute(['/admin/orders/orders']),
+    'action' => Url::toRoute(['/admin/order/orders']),
     'options' => [
         'class' => 'form-horizontal',
         'enctype' => 'multipart/form-data'
