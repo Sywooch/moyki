@@ -1,5 +1,5 @@
 <?php
-$this->title = 'Услуги и Кузова';
+$this->title = 'Админ | Услуги и Кузова';
 use yii\helpers\Html;
 ?>
 

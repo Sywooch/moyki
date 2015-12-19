@@ -1,5 +1,5 @@
 <?php
-$this->title = 'История';
+$this->title = 'Админ | История';
 use yii\widgets\ActiveForm;
 use yii\helpers\Url;
 use yii\helpers\Html;

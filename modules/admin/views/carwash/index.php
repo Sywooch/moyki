@@ -1,5 +1,5 @@
 <?php
-$this->title = 'Список моек | мойка.онлайн';
+$this->title = 'Админ | Мойки';
 ?>
 <div class="admin">
     <div class="row">

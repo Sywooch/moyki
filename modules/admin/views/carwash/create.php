@@ -1,5 +1,5 @@
 <?php
-$this->title = 'Создание мойки | мойка.онлайн';
+$this->title = 'Админ | Создание мойки';
 use yii\widgets\ActiveForm;
 use yii\helpers\Url;
 use yii\helpers\Html;
