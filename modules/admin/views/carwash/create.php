@@ -3,10 +3,11 @@ $this->title = 'Создание мойки | мойка.онлайн';
 use yii\widgets\ActiveForm;
 use yii\helpers\Url;
 use yii\helpers\Html;
+use kartik\time\TimePicker;
 ?>
 <?php $form = ActiveForm::begin([
-    'id' => 'user-favourite-tours-form',
-    'action' => Url::toRoute(['/admin/carwash/create']),
+    'id' => 'create-carwash-form',
+    'action' => Url::toRoute(['/admin/carwash/create-ajax']),
     'options' => [
         'class' => 'form-horizontal',
         'enctype' => 'multipart/form-data'
@@ -59,8 +60,193 @@ use yii\helpers\Html;
         <?= $form->field($model, 'image')->fileInput();?>
     </div>
 </div>
+<div class="row owners">
+    <div class="col-xs-12 section-title">Владельцы</div>
+    <div class="one-owner">
+        <div class="col-xs-4">
+            <?= $form->field($model, 'owners_fio[]');?>
+        </div>
+        <div class="col-xs-4">
+            <?= $form->field($model, 'owners_phone[]');?>
+        </div>
+        <div class="col-xs-4">
+            <?= $form->field($model, 'owners_password[]');?>
+        </div>
+    </div>
+    <div class="btn btn-primary add-carwash-owner col-xs-2">Добавить</div>
+</div>
+<div class="row admins">
+    <div class="col-xs-12 section-title">Администраторы</div>
+    <div class="col-xs-4">
+        <?= $form->field($model, 'admins_fio[]');?>
+    </div>
+    <div class="col-xs-4">
+        <?= $form->field($model, 'admins_phone[]');?>
+    </div>
+    <div class="col-xs-4">
+        <?= $form->field($model, 'admins_password[]');?>
+    </div>
+    <div class="btn btn-primary add-carwash-admin col-xs-2">Добавить</div>
+</div>
 
-<?=Html::submitButton('Сохранить', ['class' => 'btn btn-success col-xs-4']);?>
+<!-- work periods -->
+<div class="row work monday">
+    <div class="col-xs-2">
+        Понедельник
+    </div>
+    <div class="col-xs-3">
+        <?= $form->field($model, 'work_in_monday_start')->widget(TimePicker::classname(), [
+            'pluginOptions' => [
+                'minuteStep' => 1
+            ],
+            'options' => ['value'=> '12:00 AM']
+        ])->label('');?>
+    </div>
+    <div class="col-xs-3">
+        <?= $form->field($model, 'work_in_monday_end')->widget(TimePicker::classname(), [
+            'pluginOptions' => [
+                'minuteStep' => 1
+            ],
+            'options' => ['value'=> '12:00 PM']
+        ])->label('');?>
+    </div>
+</div>
+
+    <div class="row work tuesday">
+        <div class="col-xs-2">
+            Вторник
+        </div>
+        <div class="col-xs-3">
+            <?= $form->field($model, 'work_in_tuesday_start')->widget(TimePicker::classname(), [
+                'pluginOptions' => [
+                    'minuteStep' => 1
+                ],
+                'options' => ['value'=> '12:00 AM']
+            ])->label('');?>
+        </div>
+        <div class="col-xs-3">
+            <?= $form->field($model, 'work_in_tuesday_end')->widget(TimePicker::classname(), [
+                'pluginOptions' => [
+                    'minuteStep' => 1
+                ],
+                'options' => ['value'=> '12:00 PM']
+            ])->label('');?>
+        </div>
+    </div>
+
+    <div class="row work wednesday">
+        <div class="col-xs-2">
+            Среда
+        </div>
+        <div class="col-xs-3">
+            <?= $form->field($model, 'work_in_wednesday_start')->widget(TimePicker::classname(), [
+                'pluginOptions' => [
+                    'minuteStep' => 1
+                ],
+                'options' => ['value'=> '12:00 AM']
+            ])->label('');?>
+        </div>
+        <div class="col-xs-3">
+            <?= $form->field($model, 'work_in_wednesday_end')->widget(TimePicker::classname(), [
+                'pluginOptions' => [
+                    'minuteStep' => 1
+                ],
+                'options' => ['value'=> '12:00 PM']
+            ])->label('');?>
+        </div>
+    </div>
+
+    <div class="row work thursday">
+        <div class="col-xs-2">
+            Четверг
+        </div>
+        <div class="col-xs-3">
+            <?= $form->field($model, 'work_in_thursday_start')->widget(TimePicker::classname(), [
+                'pluginOptions' => [
+                    'minuteStep' => 1
+                ],
+                'options' => ['value'=> '12:00 AM']
+            ])->label('');?>
+        </div>
+        <div class="col-xs-3">
+            <?= $form->field($model, 'work_in_thursday_end')->widget(TimePicker::classname(), [
+                'pluginOptions' => [
+                    'minuteStep' => 1
+                ],
+                'options' => ['value'=> '12:00 PM']
+            ])->label('');?>
+        </div>
+    </div>
+
+    <div class="row work friday">
+        <div class="col-xs-2">
+            Пятница
+        </div>
+        <div class="col-xs-3">
+            <?= $form->field($model, 'work_in_friday_start')->widget(TimePicker::classname(), [
+                'pluginOptions' => [
+                    'minuteStep' => 1
+                ],
+                'options' => ['value'=> '12:00 AM']
+            ])->label('');?>
+        </div>
+        <div class="col-xs-3">
+            <?= $form->field($model, 'work_in_friday_end')->widget(TimePicker::classname(), [
+                'pluginOptions' => [
+                    'minuteStep' => 1
+                ],
+                'options' => ['value'=> '12:00 PM']
+            ])->label('');?>
+        </div>
+    </div>
+
+    <div class="row work saturday">
+        <div class="col-xs-2">
+            Суббота
+        </div>
+        <div class="col-xs-3">
+            <?= $form->field($model, 'work_in_saturday_start')->widget(TimePicker::classname(), [
+                'pluginOptions' => [
+                    'minuteStep' => 1
+                ],
+                'options' => ['value'=> '12:00 AM']
+            ])->label('');?>
+        </div>
+        <div class="col-xs-3">
+            <?= $form->field($model, 'work_in_saturday_end')->widget(TimePicker::classname(), [
+                'pluginOptions' => [
+                    'minuteStep' => 1
+                ],
+                'options' => ['value'=> '12:00 PM']
+            ])->label('');?>
+        </div>
+    </div>
+
+    <div class="row work sunday">
+        <div class="col-xs-2">
+            Воскресенье
+        </div>
+        <div class="col-xs-3">
+            <?= $form->field($model, 'work_in_sunday_start')->widget(TimePicker::classname(), [
+                'pluginOptions' => [
+                    'minuteStep' => 1
+                ],
+                'options' => ['value'=> '12:00 AM']
+            ])->label('');?>
+        </div>
+        <div class="col-xs-3">
+            <?= $form->field($model, 'work_in_sunday_end')->widget(TimePicker::classname(), [
+                'pluginOptions' => [
+                    'minuteStep' => 1
+                ],
+                'options' => ['value'=> '12:00 PM']
+            ])->label('');?>
+        </div>
+    </div>
+<!-- work periods -->
+
+
+<?=Html::submitButton('Сохранить', ['class' => 'btn btn-success col-xs-4', 'id' => 'create-carwash']);?>
 <?=Html::a('Назад', ['/admin/carwash'], ['class' => 'btn btn-default col-xs-4 pull-right']);?>
 
 <?php ActiveForm::end();?>
