@@ -21,7 +21,8 @@
         "yiisoft/yii2-jui": "~2.0.0",
         "kartik-v/yii2-widget-datepicker": "@dev",
         "karpoff/yii2-crop-image-upload": "*",
-        "kartik-v/yii2-widget-activeform": "@dev"
+        "kartik-v/yii2-widget-activeform": "@dev",
+        "kartik-v/yii2-widget-timepicker": "*"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

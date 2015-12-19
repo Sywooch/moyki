@@ -15,8 +15,12 @@ class CarwashForm extends Model
     public $latitude;
     public $longitude;
     public $description;
-    public $owners;
-    public $admins;
+    public $owners_fio;
+    public $owners_phone;
+    public $owners_password;
+    public $admins_fio;
+    public $admins_phone;
+    public $admins_password;
     public $work_in_monday_start;
     public $work_in_monday_end;
     public $work_in_tuesday_start;
@@ -39,8 +43,16 @@ class CarwashForm extends Model
     public function rules()
     {
         return [
-            [['name', 'email'], 'required'],
+            [['name', 'email', 'owners_fio', 'owners_phone', 'owners_password'], 'required'],
             ['email', 'email'],
+            [['owners_fio', 'owners_phone', 'owners_password', 'admins_fio', 'admins_phone', 'admins_password'], 'default', 'value' => []],
+            [['work_in_monday_start', 'work_in_monday_end',
+                'work_in_tuesday_start', 'work_in_tuesday_end',
+                'work_in_wednesday_start', 'work_in_wednesday_end',
+                'work_in_thursday_start', 'work_in_thursday_end',
+                'work_in_friday_start', 'work_in_friday_end',
+                'work_in_saturday_start', 'work_in_saturday_end',
+                'work_in_sunday_start', 'work_in_sunday_end'], 'default', 'value' => null]
         ];
     }
 
@@ -49,6 +61,9 @@ class CarwashForm extends Model
     {
         return [
             'name' => 'Название мойки',
+            'owners_fio' => 'Название мойки',
+            'owners_phone' => 'Название мойки',
+            'owners_password' => 'Название мойки',
         ];
     }
 

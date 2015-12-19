@@ -20,4 +20,22 @@ $(function(){
            });
        }
    });
+
+    $('#create-carwash').on('click', function(e){
+        e.preventDefault();
+        var url = $(this).closest('form').attr('action');
+        var form = $('#create-carwash-form').serialize();
+        $.post(url, form).done(function(response){
+            var data = $.parseJSON(response);
+            console.log(data);
+        });
+    })
+
+    //add carwash owner row
+    $('.add-carwash-owner').on('click', function(){
+        var clone_element = $('.one-owner:first').clone();
+        console.log(clone_element);
+        $('.one-owner:last').after(clone_element);
+        clone_element.find('input').attr('id', Math.random()*10000+Date.now().toString()).val('');
+    });
 });
