@@ -9,6 +9,7 @@ use yii\gii\generators\form;
 <?= \app\components\AdminAlertWidget::widget(['type' => 'discounts']);?>
 
 <div class="wrap">
+    <?php if(count($discounts_list)):?>
     <?php foreach($discounts_list as $discount):?>
         <div class="col-xs-12 discounts" data-element-id="<?=$discount->id;?>">
             <div class="col-xs-5 data-list">
@@ -23,6 +24,7 @@ use yii\gii\generators\form;
         </div>
 
     <?php endforeach; ?>
+    <?php endif;?>
 </div>
 <?php $form = ActiveForm::begin([
     'action' => Url::to(['/owner/owner/discounts']),
@@ -49,13 +51,10 @@ use yii\gii\generators\form;
 
             </div>
         </div>
-<!--                <div class="list col-xs-2 del">-->
-<!--                    --><?//= Html::a(Html::tag('span', '', ['class' => 'glyphicon glyphicon-remove']), \yii\helpers\Url::toRoute(['/owner/owner/delete-discounts', 'id_discounts' => $discount->id]), ['class' => 'col-xs-12 delete']);?>
-<!--                </div>-->
     </div>
 
     <!--    ------------------------------------------------>
-    <div class="row col-xs-12" data-element-id="<?=$discounts->id;?>">
+    <div class="row col-xs-12">
         <div class="col-xs-4">
             <div class="list col-xs-6">
                 <?= Html::button('Добавить', ['class' => 'add-button']);?>
