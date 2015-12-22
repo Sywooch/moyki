@@ -43,8 +43,9 @@ class CarwashForm extends Model
     public function rules()
     {
         return [
-            [['name', 'email', 'owners_fio', 'owners_phone', 'owners_password'], 'required'],
+            [['name', 'email', 'owners_fio', 'owners_phone', 'owners_password', 'city', 'latitude', 'longitude'], 'required'],
             ['email', 'email'],
+            [['owners_phone', 'admins_phone', 'box_count'], 'integer'],
             [['owners_fio', 'owners_phone', 'owners_password', 'admins_fio', 'admins_phone', 'admins_password'], 'default', 'value' => []],
             [['work_in_monday_start', 'work_in_monday_end',
                 'work_in_tuesday_start', 'work_in_tuesday_end',
@@ -64,6 +65,21 @@ class CarwashForm extends Model
             'owners_fio' => 'Название мойки',
             'owners_phone' => 'Название мойки',
             'owners_password' => 'Название мойки',
+            'email' => 'Email',
+            'address' => 'Адрес',
+            'image' => 'Изображение',
+            'city' => 'Город',
+            'status' => 'Статус',
+            'latitude' => 'Широта',
+            'longitude' => 'Долгота',
+            'description' => 'Описание',
+            'owners_fio' => 'ФИО владельца',
+            'owners_phone' => 'Телефон владельца',
+            'owners_password' => 'Пароль владельца',
+            'admins_fio' => 'ФИО администратора',
+            'admins_phone' => 'Телефон администратора',
+            'admins_password' => 'Пароль администратора',
+            'box_count' => 'Количество боксов'
         ];
     }
 

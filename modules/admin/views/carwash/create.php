@@ -9,7 +9,7 @@ use kartik\time\TimePicker;
     'id' => 'create-carwash-form',
     'action' => Url::toRoute(['/admin/carwash/create-ajax']),
     'options' => [
-        'class' => 'form-horizontal',
+        'class' => 'form-horizontal admin',
         'enctype' => 'multipart/form-data'
     ],
     'fieldConfig' => [
@@ -62,29 +62,31 @@ use kartik\time\TimePicker;
 </div>
 <div class="row owners">
     <div class="col-xs-12 section-title">Владельцы</div>
-    <div class="one-owner">
+    <div class="one-owner col-xs-12">
         <div class="col-xs-4">
-            <?= $form->field($model, 'owners_fio[]');?>
+            <?= $form->field($model, 'owners_fio[]')->label('')->input('text', ['placeholder' => 'ФИО']);?>
         </div>
         <div class="col-xs-4">
-            <?= $form->field($model, 'owners_phone[]');?>
+            <?= $form->field($model, 'owners_phone[]')->label('')->input('text', ['placeholder' => 'Телефон']);?>
         </div>
         <div class="col-xs-4">
-            <?= $form->field($model, 'owners_password[]');?>
+            <?= $form->field($model, 'owners_password[]')->label('')->input('text', ['placeholder' => 'Пароль']);?>
         </div>
     </div>
     <div class="btn btn-primary add-carwash-owner col-xs-2">Добавить</div>
 </div>
 <div class="row admins">
     <div class="col-xs-12 section-title">Администраторы</div>
-    <div class="col-xs-4">
-        <?= $form->field($model, 'admins_fio[]');?>
-    </div>
-    <div class="col-xs-4">
-        <?= $form->field($model, 'admins_phone[]');?>
-    </div>
-    <div class="col-xs-4">
-        <?= $form->field($model, 'admins_password[]');?>
+    <div class="one-admin col-xs-12">
+        <div class="col-xs-4">
+            <?= $form->field($model, 'admins_fio[]')->label('')->input('text', ['placeholder' => 'ФИО']);?>
+        </div>
+        <div class="col-xs-4">
+            <?= $form->field($model, 'admins_phone[]')->label('')->input('text', ['placeholder' => 'Телефон']);?>
+        </div>
+        <div class="col-xs-4">
+            <?= $form->field($model, 'admins_password[]')->label('')->input('text', ['placeholder' => 'Пароль']);?>
+        </div>
     </div>
     <div class="btn btn-primary add-carwash-admin col-xs-2">Добавить</div>
 </div>
@@ -244,9 +246,44 @@ use kartik\time\TimePicker;
         </div>
     </div>
 <!-- work periods -->
+<div class="row">
+    <div class="col-xs-4">
+        <?= $form->field($model, 'box_count')->input('number', ['min' => 0, 'max' => 99000, 'step' => 100, 'value' => 0]);?>
+    </div>
+</div>
 
+<div class="row">
+    <?php if((count($vehicles)) and (count($services))):?>
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th></th>
+                    <?php foreach($vehicles as $vehicle):?>
+                        <th>
+                            <?= $vehicle->title;?>
+                        </th>
+                    <?php endforeach;?>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach($services as $service):?>
+                    <tr>
+                        <td>
+                            <?=$service->title;?>
+                        </td>
+                        <?php foreach($vehicles as $veh):?>
+                            <td class="set-service-time" data-service-id="<?=$service->id;?>" data-vehicle-id="<?=$veh->id;?>">
 
-<?=Html::submitButton('Сохранить', ['class' => 'btn btn-success col-xs-4', 'id' => 'create-carwash']);?>
-<?=Html::a('Назад', ['/admin/carwash'], ['class' => 'btn btn-default col-xs-4 pull-right']);?>
+                            </td>
+                        <?php endforeach;?>
+                    </tr>
+                <?php endforeach;?>
+            </tbody>
+        </table>
+    <?php endif;?>
+</div>
+
+<?=Html::submitButton('Сохранить', ['class' => 'btn btn-success col-xs-4 save-carwash', 'id' => 'create-carwash']);?>
+<?=Html::a('Назад', ['/admin/carwash'], ['class' => 'btn btn-default col-xs-4 pull-right back-carwash']);?>
 <br><br><br>
 <?php ActiveForm::end();?>

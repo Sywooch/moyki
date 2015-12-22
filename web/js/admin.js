@@ -38,4 +38,12 @@ $(function(){
         $('.one-owner:last').after(clone_element);
         clone_element.find('input').attr('id', Math.random()*10000+Date.now().toString()).val('');
     });
+
+    //add carwash owner row
+    $('.add-carwash-admin').on('click', function(){
+        var clone_element = $('.one-admin:first').clone();
+        console.log(clone_element);
+        $('.one-admin:last').after(clone_element);
+        clone_element.find('input').attr('id', Math.random()*10000+Date.now().toString()).val('');
+    });
 });

@@ -38,4 +38,12 @@ form{
       color: $success;
     }
   }
+  &.admin{
+    .one-owner, .one-admin{
+      padding: 0px;
+    }
+    .add-carwash-owner, .add-carwash-admin, .save-carwash{
+      margin-left: 15px;
+    }
+  }
 }
