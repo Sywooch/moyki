@@ -121,7 +121,8 @@ $this->title = Yii::t('app', 'Wash online');
                                     <div class="image-blocks">
                                         <?=Html::img($service->image_1, ['class' => 'img-responsive']);?>
                                     </div>
-                                            <?= $service->title;?>
+                                        <?= $service->title;?>
+
                                 </div>
 
                             <?php endforeach;?>
