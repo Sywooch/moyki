@@ -104,7 +104,7 @@
         margin-top: -10px;
         border-bottom: 1px dashed hsl(202, 80%, 52%);
         color: hsl(204, 45%, 23%);
-        font-weight: 900 bold;
+        font-weight: bold;
         font-family: "Tahoma", "sans-serif";
         text-transform: uppercase;
         transition: all 0.7s ease 0s;
@@ -134,7 +134,7 @@
         margin-top: 10px;
         border-bottom: 1px dashed hsl(202, 80%, 52%);
         color: hsl(204, 45%, 23%);
-        font-weight: 900 bold;
+        font-weight: bold;
         font-family: "Tahoma", "sans-serif";
         text-transform: uppercase;
         transition: all 0.7s ease 0s;
@@ -162,15 +162,16 @@
       .foot-text{
         color: hsl(212, 23%, 66%);
         font-family: "Open Sans";
-        font-size: 14px;
+        font-size: 12px;
         width: 330px;
         margin: 0;
         text-align: justify;
         box-sizing: border-box;
         cursor: pointer;
         padding-top: -15px;
-        padding-right: 30px;
+        padding-right: 60px;
         float: left;
+        text-align: start;
       }
     }
   }
