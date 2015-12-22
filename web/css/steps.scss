@@ -104,7 +104,7 @@
         margin-top: -10px;
         border-bottom: 1px dashed hsl(202, 80%, 52%);
         color: hsl(204, 45%, 23%);
-        font-weight: bold;
+        font-weight: 900 bold;
         font-family: "Tahoma", "sans-serif";
         text-transform: uppercase;
         transition: all 0.7s ease 0s;
@@ -134,7 +134,7 @@
         margin-top: 10px;
         border-bottom: 1px dashed hsl(202, 80%, 52%);
         color: hsl(204, 45%, 23%);
-        font-weight: bold;
+        font-weight: 900 bold;
         font-family: "Tahoma", "sans-serif";
         text-transform: uppercase;
         transition: all 0.7s ease 0s;
@@ -164,14 +164,13 @@
         font-family: "Open Sans";
         font-size: 12px;
         width: 330px;
-        margin: 0;
-        text-align: justify;
+        margin-bottom: 5px;
         box-sizing: border-box;
         cursor: pointer;
         padding-top: -15px;
-        padding-right: 60px;
+        padding-right: 30px;
         float: left;
-        text-align: start;
+        text-align: justify;
       }
     }
   }
@@ -187,7 +186,6 @@
       height: 140px;
       width: 245px;
       text-align: center;
-      font-size: 16px;
       font-family: "Tahoma", "sans-serif";
       font-weight: bold;
       margin-bottom: 10px;
@@ -207,7 +205,6 @@
         img {
           display: block;
           margin: auto;
-          text-align: left;
         }
       }
 
@@ -218,7 +215,6 @@
         text-transform: uppercase;
         transition: all 0.1s ease 0s;
         text-align: center;
-        margin-bottom: 384px;
       }
 
       &.even{
@@ -231,14 +227,14 @@
     position: relative;
     left: -50px;
     top: 20px;
-    &.three{
-      background: url('/web/images/static/complex.png');
-    }
-    &.two{
-      background: url('/web/images/static/service-all.png');
-    }
-    &.one{
-      background: url('/web/images/static/service-ease.png');
-    }
+//    &.three{
+//      background: url('/web/images/static/complex.png');
+//    }
+//    &.two{
+//      background: url('/web/images/static/service-all.png');
+//    }
+//    &.one{
+//      background: url('/web/images/static/service-ease.png');
+//    }
   }
 }
