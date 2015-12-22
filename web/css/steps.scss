@@ -162,7 +162,7 @@
       .foot-text{
         color: hsl(212, 23%, 66%);
         font-family: "Open Sans";
-        font-size: 12px;
+        font-size: 11px;
         width: 330px;
         margin-bottom: 5px;
         box-sizing: border-box;
@@ -171,6 +171,8 @@
         padding-right: 30px;
         float: left;
         text-align: justify;
+        flex-wrap: inherit;
+        line-height: 15px;
       }
     }
   }
