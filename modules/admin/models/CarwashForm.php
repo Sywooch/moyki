@@ -36,15 +36,19 @@ class CarwashForm extends Model
     public $work_in_sunday_start;
     public $work_in_sunday_end;
     public $box_count;
-    public $services_description;
+    public $services_description_1;
+    public $services_description_2;
+    public $services_description_3;
     public $services_cost;
     public $services_tax;
+    public $checkbox;
 
     public function rules()
     {
         return [
-            [['name', 'email', 'owners_fio', 'owners_phone', 'owners_password', 'city', 'latitude', 'longitude'], 'required'],
+            [['name', 'email', 'owners_fio', 'owners_phone', 'owners_password', 'city', 'latitude', 'longitude', 'checkbox', 'services_tax'], 'required'],
             ['email', 'email'],
+            ['services_tax', 'integer'],
             [['owners_phone', 'admins_phone', 'box_count'], 'integer'],
             [['owners_fio', 'owners_phone', 'owners_password', 'admins_fio', 'admins_phone', 'admins_password'], 'default', 'value' => []],
             [['work_in_monday_start', 'work_in_monday_end',
@@ -72,14 +76,20 @@ class CarwashForm extends Model
             'status' => 'Статус',
             'latitude' => 'Широта',
             'longitude' => 'Долгота',
-            'description' => 'Описание',
+
+            'services_description_1' => 'Сбивание грязи',
+            'services_description_2' => 'Техническая мойка',
+            'services_description_3' => 'Комплекс',
+            'services_tax' => 'Процент от услуг',
+
+            'checkbox' => 'Круглосуточно',
             'owners_fio' => 'ФИО владельца',
             'owners_phone' => 'Телефон владельца',
             'owners_password' => 'Пароль владельца',
             'admins_fio' => 'ФИО администратора',
             'admins_phone' => 'Телефон администратора',
             'admins_password' => 'Пароль администратора',
-            'box_count' => 'Количество боксов'
+            'box_count' => 'Количество боксов',
         ];
     }
 

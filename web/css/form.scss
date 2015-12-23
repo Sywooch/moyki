@@ -3,8 +3,9 @@ form{
     label{
       &.control-label {
         text-align: left;
-        font-size: 0.750em;
-        font-weight: 400;
+        font-size: 1em;
+        font-weight: 401;
+        display: inline-flex;
       }
     }
     .help-block{
@@ -38,12 +39,25 @@ form{
       color: $success;
     }
   }
+  .section-title{
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .admins{
+
+  }
+  .work{
+    margin-bottom: 30px;
+  }
   &.admin{
     .one-owner, .one-admin{
       padding: 0px;
     }
     .add-carwash-owner, .add-carwash-admin, .save-carwash{
       margin-left: 15px;
+//      margin-bottom: ;
     }
   }
 }

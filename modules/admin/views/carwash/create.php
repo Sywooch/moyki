@@ -60,6 +60,7 @@ use kartik\time\TimePicker;
         <?= $form->field($model, 'image')->fileInput();?>
     </div>
 </div>
+    <hr width="100%">
 <div class="row owners">
     <div class="col-xs-12 section-title">Владельцы</div>
     <div class="one-owner col-xs-12">
@@ -75,6 +76,7 @@ use kartik\time\TimePicker;
     </div>
     <div class="btn btn-primary add-carwash-owner col-xs-2">Добавить</div>
 </div>
+    <hr width="100%"><br><br>
 <div class="row admins">
     <div class="col-xs-12 section-title">Администраторы</div>
     <div class="one-admin col-xs-12">
@@ -90,9 +92,11 @@ use kartik\time\TimePicker;
     </div>
     <div class="btn btn-primary add-carwash-admin col-xs-2">Добавить</div>
 </div>
-
+    <hr width="100%">
 <!-- work periods -->
+
 <div class="row work monday">
+    <div class="col-xs-12 section-title">Режим работы</div>
     <div class="col-xs-2">
         Понедельник
     </div>
@@ -112,6 +116,7 @@ use kartik\time\TimePicker;
             'options' => ['value'=> '12:00 PM']
         ])->label('');?>
     </div>
+    <div class="col-xs-4"><?= $form->field($model, 'checkbox')->checkbox() ;?></div>
 </div>
 
     <div class="row work tuesday">
@@ -134,6 +139,7 @@ use kartik\time\TimePicker;
                 'options' => ['value'=> '12:00 PM']
             ])->label('');?>
         </div>
+        <div class="col-xs-4"><?= $form->field($model, 'checkbox')->checkbox() ;?></div>
     </div>
 
     <div class="row work wednesday">
@@ -156,6 +162,7 @@ use kartik\time\TimePicker;
                 'options' => ['value'=> '12:00 PM']
             ])->label('');?>
         </div>
+        <div class="col-xs-4"><?= $form->field($model, 'checkbox')->checkbox() ;?></div>
     </div>
 
     <div class="row work thursday">
@@ -178,6 +185,7 @@ use kartik\time\TimePicker;
                 'options' => ['value'=> '12:00 PM']
             ])->label('');?>
         </div>
+        <div class="col-xs-4"><?= $form->field($model, 'checkbox')->checkbox() ;?></div>
     </div>
 
     <div class="row work friday">
@@ -200,6 +208,7 @@ use kartik\time\TimePicker;
                 'options' => ['value'=> '12:00 PM']
             ])->label('');?>
         </div>
+        <div class="col-xs-4"><?= $form->field($model, 'checkbox')->checkbox() ;?></div>
     </div>
 
     <div class="row work saturday">
@@ -222,6 +231,7 @@ use kartik\time\TimePicker;
                 'options' => ['value'=> '12:00 PM']
             ])->label('');?>
         </div>
+        <div class="col-xs-4"><?= $form->field($model, 'checkbox')->checkbox() ;?></div>
     </div>
 
     <div class="row work sunday">
@@ -244,15 +254,26 @@ use kartik\time\TimePicker;
                 'options' => ['value'=> '12:00 PM']
             ])->label('');?>
         </div>
+        <div class="col-xs-4"><?= $form->field($model, 'checkbox')->checkbox() ;?></div>
     </div>
+    <hr width="100%">
 <!-- work periods -->
 <div class="row">
     <div class="col-xs-4">
         <?= $form->field($model, 'box_count')->input('number', ['min' => 0, 'max' => 99000, 'step' => 100, 'value' => 0]);?>
     </div>
 </div>
+    <hr width="100%">
+
+<div class="work">
+    <div class="col-xs-12 section-title">Введите описание для услуг</div>
+    <div class="col-xs-4"><?= $form->field($model, 'services_description_1')->textarea();?></div>
+    <div class="col-xs-4"><?= $form->field($model, 'services_description_2')->textarea();?></div>
+    <div class="col-xs-4"><?= $form->field($model, 'services_description_3')->textarea();?></div>
+</div>
 
 <div class="row">
+    <div class="col-xs-12 section-title">Введите стоимость услуги</div>
     <?php if((count($vehicles)) and (count($services))):?>
         <table class="table table-striped table-bordered">
             <thead>
@@ -282,8 +303,13 @@ use kartik\time\TimePicker;
         </table>
     <?php endif;?>
 </div>
+<div class="col-xs-4"></div>
+    <div class="col-xs-4">
+        <?= $form->field($model, 'services_tax')->textInput();?>
+    </div>
+<div class="co-xs-4"></div>
 
 <?=Html::submitButton('Сохранить', ['class' => 'btn btn-success col-xs-4 save-carwash', 'id' => 'create-carwash']);?>
 <?=Html::a('Назад', ['/admin/carwash'], ['class' => 'btn btn-default col-xs-4 pull-right back-carwash']);?>
-<br><br><br>
+
 <?php ActiveForm::end();?>
