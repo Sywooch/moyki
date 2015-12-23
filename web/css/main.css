@@ -243,15 +243,16 @@ body.admin .one-instance {
       .steps .block .steps-text .foot-text {
         color: #94a7bc;
         font-family: "Open Sans";
-        font-size: 14px;
+        font-size: 11px;
         width: 330px;
         margin: 0;
-        text-align: t;
+        text-align: justify;
         box-sizing: border-box;
         cursor: pointer;
         padding-top: -15px;
         padding-right: 30px;
-        float: left; }
+        float: left;
+        line-height: 15px; }
   .steps .three-container {
     margin-left: 65px;
     width: 500px;
