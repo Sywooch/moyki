@@ -196,7 +196,6 @@
       cursor: pointer;
       &:hover{
         background-color: $step-item-hover;
-        font-size: 20px;
       }
       &:active,&:focus{
         background-color: $step-item-active;
