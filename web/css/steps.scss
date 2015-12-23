@@ -196,7 +196,7 @@
       cursor: pointer;
       &:hover{
         background-color: $step-item-hover;
-        font-size: 20px;
+//        font-size: 20px;
       }
       &:active,&:focus{
         background-color: $step-item-active;
@@ -231,14 +231,14 @@
     position: relative;
     left: -50px;
     top: 20px;
-    &.three{
-      background: url('/web/images/static/complex.png');
-    }
-    &.two{
-      background: url('/web/images/static/service-all.png');
-    }
-    &.one{
-      background: url('/web/images/static/service-ease.png');
-    }
+//    &.three{
+//      background: url('/web/images/static/complex.png');
+//    }
+//    &.two{
+//      background: url('/web/images/static/service-all.png');
+//    }
+//    &.one{
+//      background: url('/web/images/static/service-ease.png');
+//    }
   }
 }
